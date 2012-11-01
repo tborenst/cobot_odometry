@@ -1,0 +1,128 @@
+\hypertarget{classfovis_1_1KeypointData}{
+\section{KeypointData Class Reference}
+\label{classfovis_1_1KeypointData}\index{fovis::KeypointData@{fovis::KeypointData}}
+}
+
+
+Image feature used for motion estimation.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfovis_1_1KeypointData_a9d6e34eb80522b5204f34ebe06a4fab9}{copyFrom} (const \hyperlink{classfovis_1_1KeypointData}{KeypointData} \&src)
+\item 
+\hyperlink{classfovis_1_1KeypointData_ae53890a21c24b0add109be507ffaf214}{KeypointData} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen::Vector2d \hyperlink{classfovis_1_1KeypointData_ac37015bdf7c90c14e5563d6772bac549}{base\_\-uv}
+\item 
+float \hyperlink{classfovis_1_1KeypointData_a312732f219960346581401b33cf44d5f}{disparity}
+\item 
+bool \hyperlink{classfovis_1_1KeypointData_a896725c2a47d00963355b4bb31531af8}{has\_\-depth}
+\item 
+int \hyperlink{classfovis_1_1KeypointData_ad7b7d5d0b809d0fa300e7a78c0ddfdef}{keypoint\_\-index}
+\item 
+\hyperlink{classfovis_1_1KeyPoint}{KeyPoint} \hyperlink{classfovis_1_1KeypointData_a735862645891486a2f4d30e0c41a6ead}{kp}
+\item 
+uint8\_\-t \hyperlink{classfovis_1_1KeypointData_a0a8d2f07bec8e75e0928d567cc0fb128}{pyramid\_\-level}
+\item 
+Eigen::Vector2d \hyperlink{classfovis_1_1KeypointData_a49f1a8f0899d5dafe1917d0298d6ccc0}{rect\_\-base\_\-uv}
+\item 
+int \hyperlink{classfovis_1_1KeypointData_a8e64acfab4c3eba5b36eb3b6f15b9434}{track\_\-id}
+\item 
+Eigen::Vector3d \hyperlink{classfovis_1_1KeypointData_a3718bd38e2607f9ae26d6b72ee203bb2}{xyz}
+\item 
+Eigen::Vector4d \hyperlink{classfovis_1_1KeypointData_a3429cc278fa5be99ed3308ca5852d9e7}{xyzw}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Image feature used for motion estimation. 
+
+Corresponds to a \hyperlink{classfovis_1_1KeyPoint}{KeyPoint} object as well as additional information used and stored during the visual odometry estimation process. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfovis_1_1KeypointData_ae53890a21c24b0add109be507ffaf214}{
+\index{fovis::KeypointData@{fovis::KeypointData}!KeypointData@{KeypointData}}
+\index{KeypointData@{KeypointData}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{KeypointData}]{\setlength{\rightskip}{0pt plus 5cm}{\bf KeypointData} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1KeypointData_ae53890a21c24b0add109be507ffaf214}
+Default constructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1KeypointData_a9d6e34eb80522b5204f34ebe06a4fab9}{
+\index{fovis::KeypointData@{fovis::KeypointData}!copyFrom@{copyFrom}}
+\index{copyFrom@{copyFrom}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{copyFrom}]{\setlength{\rightskip}{0pt plus 5cm}void copyFrom (
+\begin{DoxyParamCaption}
+\item[{const {\bf KeypointData} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1KeypointData_a9d6e34eb80522b5204f34ebe06a4fab9}
+populates this keypoint to be identical to the {\ttfamily src} keypoint. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classfovis_1_1KeypointData_a735862645891486a2f4d30e0c41a6ead}{
+\index{fovis::KeypointData@{fovis::KeypointData}!kp@{kp}}
+\index{kp@{kp}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{kp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf KeyPoint} {\bf kp}}}
+\label{classfovis_1_1KeypointData_a735862645891486a2f4d30e0c41a6ead}
+Pixel coordinates of keypoint in its pyramid level \hypertarget{classfovis_1_1KeypointData_a3429cc278fa5be99ed3308ca5852d9e7}{
+\index{fovis::KeypointData@{fovis::KeypointData}!xyzw@{xyzw}}
+\index{xyzw@{xyzw}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{xyzw}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Vector4d {\bf xyzw}}}
+\label{classfovis_1_1KeypointData_a3429cc278fa5be99ed3308ca5852d9e7}
+Homogeneous coordinates of the feature in the camera frame \hypertarget{classfovis_1_1KeypointData_a896725c2a47d00963355b4bb31531af8}{
+\index{fovis::KeypointData@{fovis::KeypointData}!has\_\-depth@{has\_\-depth}}
+\index{has\_\-depth@{has\_\-depth}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{has\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf has\_\-depth}}}
+\label{classfovis_1_1KeypointData_a896725c2a47d00963355b4bb31531af8}
+Indicates whether or not depth data is available for this keypoint. \hypertarget{classfovis_1_1KeypointData_a3718bd38e2607f9ae26d6b72ee203bb2}{
+\index{fovis::KeypointData@{fovis::KeypointData}!xyz@{xyz}}
+\index{xyz@{xyz}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{xyz}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Vector3d {\bf xyz}}}
+\label{classfovis_1_1KeypointData_a3718bd38e2607f9ae26d6b72ee203bb2}
+Inhomogeneous coordinates of the feature in the camera frame. Convenience variable, computed from xyzw. These coordinates may be infinite. \hypertarget{classfovis_1_1KeypointData_ac37015bdf7c90c14e5563d6772bac549}{
+\index{fovis::KeypointData@{fovis::KeypointData}!base\_\-uv@{base\_\-uv}}
+\index{base\_\-uv@{base\_\-uv}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{base\_\-uv}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Vector2d {\bf base\_\-uv}}}
+\label{classfovis_1_1KeypointData_ac37015bdf7c90c14e5563d6772bac549}
+Keypoint pixel coordinates in the base pyramid level \hypertarget{classfovis_1_1KeypointData_a49f1a8f0899d5dafe1917d0298d6ccc0}{
+\index{fovis::KeypointData@{fovis::KeypointData}!rect\_\-base\_\-uv@{rect\_\-base\_\-uv}}
+\index{rect\_\-base\_\-uv@{rect\_\-base\_\-uv}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{rect\_\-base\_\-uv}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Vector2d {\bf rect\_\-base\_\-uv}}}
+\label{classfovis_1_1KeypointData_a49f1a8f0899d5dafe1917d0298d6ccc0}
+rectified keypoint pixel coordinates in the base pyramid level \hypertarget{classfovis_1_1KeypointData_a312732f219960346581401b33cf44d5f}{
+\index{fovis::KeypointData@{fovis::KeypointData}!disparity@{disparity}}
+\index{disparity@{disparity}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{disparity}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf disparity}}}
+\label{classfovis_1_1KeypointData_a312732f219960346581401b33cf44d5f}
+Pixel disparity, if applicable. If not applicable (e.g., the depth source is not a stereo camera), this value is NAN
+
+Note that the meaning of this value depends on the \hyperlink{classfovis_1_1DepthSource}{DepthSource} used to compute it. For \hyperlink{classfovis_1_1StereoDepth}{StereoDepth}, this corresponds directly to stereo disparity. For \hyperlink{classfovis_1_1PrimeSenseDepth}{PrimeSenseDepth}, this corresponds to the \char`\"{}disparity\char`\"{} values reported by the PrimeSense sensor, which are not the same as stereo disparity. See the \hyperlink{classfovis_1_1PrimeSenseDepth}{PrimeSenseDepth} class documentation for more details. \hypertarget{classfovis_1_1KeypointData_a0a8d2f07bec8e75e0928d567cc0fb128}{
+\index{fovis::KeypointData@{fovis::KeypointData}!pyramid\_\-level@{pyramid\_\-level}}
+\index{pyramid\_\-level@{pyramid\_\-level}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{pyramid\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf pyramid\_\-level}}}
+\label{classfovis_1_1KeypointData_a0a8d2f07bec8e75e0928d567cc0fb128}
+Which pyramid level was this feature computed on \hypertarget{classfovis_1_1KeypointData_ad7b7d5d0b809d0fa300e7a78c0ddfdef}{
+\index{fovis::KeypointData@{fovis::KeypointData}!keypoint\_\-index@{keypoint\_\-index}}
+\index{keypoint\_\-index@{keypoint\_\-index}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{keypoint\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf keypoint\_\-index}}}
+\label{classfovis_1_1KeypointData_ad7b7d5d0b809d0fa300e7a78c0ddfdef}
+Not used. \hypertarget{classfovis_1_1KeypointData_a8e64acfab4c3eba5b36eb3b6f15b9434}{
+\index{fovis::KeypointData@{fovis::KeypointData}!track\_\-id@{track\_\-id}}
+\index{track\_\-id@{track\_\-id}!fovis::KeypointData@{fovis::KeypointData}}
+\subsubsection[{track\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf track\_\-id}}}
+\label{classfovis_1_1KeypointData_a8e64acfab4c3eba5b36eb3b6f15b9434}
+to identify unique feature track externally 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+keypoint.hpp\end{DoxyCompactItemize}

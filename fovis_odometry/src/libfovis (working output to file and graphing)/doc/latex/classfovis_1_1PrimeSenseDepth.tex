@@ -1,0 +1,140 @@
+\hypertarget{classfovis_1_1PrimeSenseDepth}{
+\section{PrimeSenseDepth Class Reference}
+\label{classfovis_1_1PrimeSenseDepth}\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+}
+
+
+Stores depth data for a Kinect / PrimeSense camera.  
+
+
+Inheritance diagram for PrimeSenseDepth:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfovis_1_1PrimeSenseDepth}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classfovis_1_1PrimeSenseDepth_a1941b0a011e836e922ce08cf48c635f9}{getBaseline} () const 
+\item 
+uint16\_\-t \hyperlink{classfovis_1_1PrimeSenseDepth_a2b700699b1150d1c3ce269eac01b897b}{getDisparity} (int rgb\_\-u, int rgb\_\-v) const 
+\item 
+uint16\_\-t \hyperlink{classfovis_1_1PrimeSenseDepth_a5e3469916e73c978f8ddabbbece456cf}{getDisparityAtIRPixel} (int ir\_\-u, int ir\_\-v) const 
+\item 
+void \hyperlink{classfovis_1_1PrimeSenseDepth_a9ba60dfd976745761bb861f08a374679}{getXyz} (\hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$frame)
+\item 
+\hypertarget{classfovis_1_1PrimeSenseDepth_ae02d9ae398ad1009deb51c39ea4e7272}{
+bool {\bfseries getXyz} (int u, int v, Eigen::Vector3d \&xyz)}
+\label{classfovis_1_1PrimeSenseDepth_ae02d9ae398ad1009deb51c39ea4e7272}
+
+\item 
+bool \hyperlink{classfovis_1_1PrimeSenseDepth_af5915074d7b5e0694bcb0fae662c6c6c}{haveXyz} (int u, int v)
+\item 
+\hypertarget{classfovis_1_1PrimeSenseDepth_a31ff2c09c45447a349a0b628e15f66e9}{
+{\bfseries PrimeSenseDepth} (const \hyperlink{classfovis_1_1PrimeSenseCalibration}{PrimeSenseCalibration} $\ast$calib)}
+\label{classfovis_1_1PrimeSenseDepth_a31ff2c09c45447a349a0b628e15f66e9}
+
+\item 
+void \hyperlink{classfovis_1_1PrimeSenseDepth_a39e83560fd704306d53858d07d61621b}{refineXyz} (\hyperlink{classfovis_1_1FeatureMatch}{FeatureMatch} $\ast$matches, int num\_\-matches, \hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$frame)
+\item 
+\hypertarget{classfovis_1_1PrimeSenseDepth_ac821e5da15e9dcb63fe49702d38c22ea}{
+void {\bfseries setDisparityData} (const uint16\_\-t $\ast$disparity)}
+\label{classfovis_1_1PrimeSenseDepth_ac821e5da15e9dcb63fe49702d38c22ea}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores depth data for a Kinect / PrimeSense camera. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structfovis_1_1PrimeSenseCalibrationParameters}{PrimeSenseCalibrationParameters}, \hyperlink{classfovis_1_1PrimeSenseCalibration}{PrimeSenseCalibration} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1PrimeSenseDepth_a9ba60dfd976745761bb861f08a374679}{
+\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}!getXyz@{getXyz}}
+\index{getXyz@{getXyz}!fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+\subsubsection[{getXyz}]{\setlength{\rightskip}{0pt plus 5cm}void getXyz (
+\begin{DoxyParamCaption}
+\item[{{\bf OdometryFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseDepth_a9ba60dfd976745761bb861f08a374679}
+Populate keypoints in frame with XYZ data. 
+
+Implements \hyperlink{classfovis_1_1DepthSource_a0259f77a02ba85f5370407db4759d16a}{DepthSource}.
+
+\hypertarget{classfovis_1_1PrimeSenseDepth_a39e83560fd704306d53858d07d61621b}{
+\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}!refineXyz@{refineXyz}}
+\index{refineXyz@{refineXyz}!fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+\subsubsection[{refineXyz}]{\setlength{\rightskip}{0pt plus 5cm}void refineXyz (
+\begin{DoxyParamCaption}
+\item[{{\bf FeatureMatch} $\ast$}]{matches, }
+\item[{int}]{num\_\-matches, }
+\item[{{\bf OdometryFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseDepth_a39e83560fd704306d53858d07d61621b}
+Refine XYZ data of target keypoints in matches (usually after subpixel refinement of the matches across time). 
+
+Implements \hyperlink{classfovis_1_1DepthSource_a4d6eafb84371d0720cd7ee53ac2e659a}{DepthSource}.
+
+\hypertarget{classfovis_1_1PrimeSenseDepth_a2b700699b1150d1c3ce269eac01b897b}{
+\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}!getDisparity@{getDisparity}}
+\index{getDisparity@{getDisparity}!fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+\subsubsection[{getDisparity}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t getDisparity (
+\begin{DoxyParamCaption}
+\item[{int}]{rgb\_\-u, }
+\item[{int}]{rgb\_\-v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseDepth_a2b700699b1150d1c3ce269eac01b897b}
+Retrieve the disparity value at the IR pixel that projects on to the specified RGB pixel.
+
+Disparity is not measured on the RGB image directly. Instead, it's measured on the IR image, then the points are projected onto the RGB image. This function looks up the IR pixel that projected onto the specified RGB pixel, and then returns the disparity of the IR pixel.
+
+Returns: the measured disparity, or 0 if there is no disparity data for the specified pixel. \hypertarget{classfovis_1_1PrimeSenseDepth_a5e3469916e73c978f8ddabbbece456cf}{
+\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}!getDisparityAtIRPixel@{getDisparityAtIRPixel}}
+\index{getDisparityAtIRPixel@{getDisparityAtIRPixel}!fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+\subsubsection[{getDisparityAtIRPixel}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t getDisparityAtIRPixel (
+\begin{DoxyParamCaption}
+\item[{int}]{ir\_\-u, }
+\item[{int}]{ir\_\-v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseDepth_a5e3469916e73c978f8ddabbbece456cf}
+Retrieve the disparity value at the specified RGB pixel. \hypertarget{classfovis_1_1PrimeSenseDepth_a1941b0a011e836e922ce08cf48c635f9}{
+\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}!getBaseline@{getBaseline}}
+\index{getBaseline@{getBaseline}!fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+\subsubsection[{getBaseline}]{\setlength{\rightskip}{0pt plus 5cm}double getBaseline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseDepth_a1941b0a011e836e922ce08cf48c635f9}
+Return baseline of depth source, if applicable. If not applicable (e.g. for OpenNI devices) return 0. 
+
+Implements \hyperlink{classfovis_1_1DepthSource_a22d76295f183f3ec9e34d2d7e837c675}{DepthSource}.
+
+\hypertarget{classfovis_1_1PrimeSenseDepth_af5915074d7b5e0694bcb0fae662c6c6c}{
+\index{fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}!haveXyz@{haveXyz}}
+\index{haveXyz@{haveXyz}!fovis::PrimeSenseDepth@{fovis::PrimeSenseDepth}}
+\subsubsection[{haveXyz}]{\setlength{\rightskip}{0pt plus 5cm}bool haveXyz (
+\begin{DoxyParamCaption}
+\item[{int}]{u, }
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseDepth_af5915074d7b5e0694bcb0fae662c6c6c}
+This should return true if it's not certain there's no depth at (u,v). It should be an inexpensive check that is used to avoid pointless (hah!) creation of keypoints. False positives are fine as ling as getXyz gets rid of them. 
+
+Implements \hyperlink{classfovis_1_1DepthSource_ad0d2b9dd0e48e428319c3c84e87fa5cf}{DepthSource}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+primesense\_\-depth.hpp\end{DoxyCompactItemize}

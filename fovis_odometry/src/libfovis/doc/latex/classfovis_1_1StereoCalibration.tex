@@ -1,0 +1,101 @@
+\hypertarget{classfovis_1_1StereoCalibration}{
+\section{StereoCalibration Class Reference}
+\label{classfovis_1_1StereoCalibration}\index{fovis::StereoCalibration@{fovis::StereoCalibration}}
+}
+
+
+Computes useful information from a \hyperlink{structfovis_1_1StereoCalibrationParameters}{StereoCalibrationParameters} object.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfovis_1_1StereoCalibration_a1941b0a011e836e922ce08cf48c635f9}{
+double {\bfseries getBaseline} () const }
+\label{classfovis_1_1StereoCalibration_a1941b0a011e836e922ce08cf48c635f9}
+
+\item 
+int \hyperlink{classfovis_1_1StereoCalibration_a317329daf960a1759801c0f16d43d5a3}{getHeight} () const 
+\item 
+\hypertarget{classfovis_1_1StereoCalibration_a536e3a1c9ce494e4aa7fd26b6052dcdf}{
+const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$ {\bfseries getLeftRectification} () const }
+\label{classfovis_1_1StereoCalibration_a536e3a1c9ce494e4aa7fd26b6052dcdf}
+
+\item 
+\hypertarget{classfovis_1_1StereoCalibration_ab2d2a83222ec0129d145428e46ef3402}{
+const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \& {\bfseries getRectifiedParameters} () const }
+\label{classfovis_1_1StereoCalibration_ab2d2a83222ec0129d145428e46ef3402}
+
+\item 
+\hypertarget{classfovis_1_1StereoCalibration_a20ce4a3aaa724f8cf89da6d3c7fc9a6a}{
+const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$ {\bfseries getRightRectification} () const }
+\label{classfovis_1_1StereoCalibration_a20ce4a3aaa724f8cf89da6d3c7fc9a6a}
+
+\item 
+Eigen::Matrix4d \hyperlink{classfovis_1_1StereoCalibration_a1719db5b17bd3d44657bad9a41000696}{getUvdToXyz} () const 
+\item 
+int \hyperlink{classfovis_1_1StereoCalibration_af149cb053bc8b5fbc1364b5dbb934488}{getWidth} () const 
+\item 
+\hyperlink{classfovis_1_1StereoCalibration}{StereoCalibration} $\ast$ \hyperlink{classfovis_1_1StereoCalibration_ac9cd053e6a872120501d02a8380ae7f5}{makeCopy} () const 
+\item 
+\hypertarget{classfovis_1_1StereoCalibration_a458a750c764033004d225eb12061784d}{
+{\bfseries StereoCalibration} (const \hyperlink{structfovis_1_1StereoCalibrationParameters}{StereoCalibrationParameters} \&params)}
+\label{classfovis_1_1StereoCalibration_a458a750c764033004d225eb12061784d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Computes useful information from a \hyperlink{structfovis_1_1StereoCalibrationParameters}{StereoCalibrationParameters} object. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1StereoCalibration_a1719db5b17bd3d44657bad9a41000696}{
+\index{fovis::StereoCalibration@{fovis::StereoCalibration}!getUvdToXyz@{getUvdToXyz}}
+\index{getUvdToXyz@{getUvdToXyz}!fovis::StereoCalibration@{fovis::StereoCalibration}}
+\subsubsection[{getUvdToXyz}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix4d getUvdToXyz (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1StereoCalibration_a1719db5b17bd3d44657bad9a41000696}
+Compute the 4x4 transformation matrix mapping \mbox{[} u, v, disparity, 1 \mbox{]} coordinates to \mbox{[} x, y, z, w \mbox{]} homogeneous coordinates in camera space. \hypertarget{classfovis_1_1StereoCalibration_af149cb053bc8b5fbc1364b5dbb934488}{
+\index{fovis::StereoCalibration@{fovis::StereoCalibration}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!fovis::StereoCalibration@{fovis::StereoCalibration}}
+\subsubsection[{getWidth}]{\setlength{\rightskip}{0pt plus 5cm}int getWidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1StereoCalibration_af149cb053bc8b5fbc1364b5dbb934488}
+\begin{DoxyReturn}{Returns}
+the width of the rectified camera. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1StereoCalibration_a317329daf960a1759801c0f16d43d5a3}{
+\index{fovis::StereoCalibration@{fovis::StereoCalibration}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!fovis::StereoCalibration@{fovis::StereoCalibration}}
+\subsubsection[{getHeight}]{\setlength{\rightskip}{0pt plus 5cm}int getHeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1StereoCalibration_a317329daf960a1759801c0f16d43d5a3}
+\begin{DoxyReturn}{Returns}
+the height of the rectified camera. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1StereoCalibration_ac9cd053e6a872120501d02a8380ae7f5}{
+\index{fovis::StereoCalibration@{fovis::StereoCalibration}!makeCopy@{makeCopy}}
+\index{makeCopy@{makeCopy}!fovis::StereoCalibration@{fovis::StereoCalibration}}
+\subsubsection[{makeCopy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StereoCalibration}$\ast$ makeCopy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1StereoCalibration_ac9cd053e6a872120501d02a8380ae7f5}
+\begin{DoxyReturn}{Returns}
+a newly allocated copy of this calibration object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+stereo\_\-depth.hpp\end{DoxyCompactItemize}

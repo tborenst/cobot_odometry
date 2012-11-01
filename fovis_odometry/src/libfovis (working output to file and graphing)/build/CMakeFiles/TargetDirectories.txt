@@ -1,0 +1,5 @@
+/home/twhyte/cobot/robocpp/src/libfovis/build/testers/CMakeFiles/absolute-orientation-tester.dir
+/home/twhyte/cobot/robocpp/src/libfovis/build/libfovis/CMakeFiles/fovis.dir
+/home/twhyte/cobot/robocpp/src/libfovis/build/examples/fv-example-freenect/CMakeFiles/fv-example-freenect.dir
+/home/twhyte/cobot/robocpp/src/libfovis/build/testers/CMakeFiles/refine-motion-estimate-tester.dir
+/home/twhyte/cobot/robocpp/src/libfovis/build/CMakeFiles/tmp.dir

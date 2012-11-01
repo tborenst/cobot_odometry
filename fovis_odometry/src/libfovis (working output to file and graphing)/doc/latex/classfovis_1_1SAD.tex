@@ -1,0 +1,45 @@
+\hypertarget{classfovis_1_1SAD}{
+\section{SAD Class Reference}
+\label{classfovis_1_1SAD}\index{fovis::SAD@{fovis::SAD}}
+}
+
+
+Calculates the Sum of Absolute Deviations (\hyperlink{classfovis_1_1SAD}{SAD}) score between two vectors of length descriptor\_\-len.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfovis_1_1SAD_a9ce8d3af51f97c40bac28d95bb550493}{
+int {\bfseries getWorstScore} () const }
+\label{classfovis_1_1SAD_a9ce8d3af51f97c40bac28d95bb550493}
+
+\item 
+\hypertarget{classfovis_1_1SAD_ac2a3cf5966a597da6e9101e25c7d87f0}{
+{\bfseries SAD} (int descriptor\_\-len)}
+\label{classfovis_1_1SAD_ac2a3cf5966a597da6e9101e25c7d87f0}
+
+\item 
+int32\_\-t \hyperlink{classfovis_1_1SAD_a28e42afefdce36393367c8748d11f265}{score} (const uint8\_\-t $\ast$ref\_\-desc, const uint8\_\-t $\ast$target\_\-desc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculates the Sum of Absolute Deviations (\hyperlink{classfovis_1_1SAD}{SAD}) score between two vectors of length descriptor\_\-len. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1SAD_a28e42afefdce36393367c8748d11f265}{
+\index{fovis::SAD@{fovis::SAD}!score@{score}}
+\index{score@{score}!fovis::SAD@{fovis::SAD}}
+\subsubsection[{score}]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t score (
+\begin{DoxyParamCaption}
+\item[{const uint8\_\-t $\ast$}]{ref\_\-desc, }
+\item[{const uint8\_\-t $\ast$}]{target\_\-desc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1SAD_a28e42afefdce36393367c8748d11f265}
+Calculate \hyperlink{classfovis_1_1SAD}{SAD} score between ref\_\-desc and target\_\-desc. ref\_\-desc and target\_\-desc must be padded with zero-\/filled pad bytes up to multiple of 16. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+sad.hpp\end{DoxyCompactItemize}

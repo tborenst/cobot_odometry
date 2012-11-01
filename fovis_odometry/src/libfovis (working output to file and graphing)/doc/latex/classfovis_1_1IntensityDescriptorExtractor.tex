@@ -1,0 +1,171 @@
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor}{
+\section{IntensityDescriptorExtractor Class Reference}
+\label{classfovis_1_1IntensityDescriptorExtractor}\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+}
+
+
+Extracts mean-\/normalized intensity patch around a pixel.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const int $\ast$ \hyperlink{classfovis_1_1IntensityDescriptorExtractor_acb4a60e9159801a3486dd6f2081cf346}{getDescriptorIndexOffsets} () const 
+\item 
+int \hyperlink{classfovis_1_1IntensityDescriptorExtractor_ace19c8012ae7eaa4db2f807167b165f9}{getDescriptorLength} () const 
+\item 
+int \hyperlink{classfovis_1_1IntensityDescriptorExtractor_ab19595fa4e4bb6716f9ed7fa38a297b2}{getDescriptorStride} () const 
+\item 
+\hyperlink{classfovis_1_1IntensityDescriptorExtractor_ae89b1246e1e1a199bfcf70ce8e194f97}{IntensityDescriptorExtractor} (int raw\_\-gray\_\-stride, int feature\_\-window\_\-size)
+\item 
+void \hyperlink{classfovis_1_1IntensityDescriptorExtractor_a6741482f67c7acc2bbc6a45aa3e562b4}{populateDescriptorAligned} (uint8\_\-t $\ast$image, int x, int y, uint8\_\-t $\ast$descriptor) const 
+\item 
+void \hyperlink{classfovis_1_1IntensityDescriptorExtractor_aa1ad51fea7d5c44c9d1588a821ebafcd}{populateDescriptorInterp} (uint8\_\-t $\ast$image, float x, float y, uint8\_\-t $\ast$descriptor) const 
+\item 
+void \hyperlink{classfovis_1_1IntensityDescriptorExtractor_a78ac9f581501370c62b5213ebba152fa}{populateDescriptorsAligned} (uint8\_\-t $\ast$image, const \hyperlink{classfovis_1_1KeypointData}{KeypointData} $\ast$keypoints, int num\_\-keypoints, uint8\_\-t $\ast$descriptors) const 
+\item 
+void \hyperlink{classfovis_1_1IntensityDescriptorExtractor_a6f626ae691f4031726a17453b3cce95c}{populateDescriptorsInterp} (uint8\_\-t $\ast$image, const \hyperlink{classfovis_1_1KeypointData}{KeypointData} $\ast$keypoints, int num\_\-keypoints, uint8\_\-t $\ast$descriptors) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extracts mean-\/normalized intensity patch around a pixel. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor_ae89b1246e1e1a199bfcf70ce8e194f97}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!IntensityDescriptorExtractor@{IntensityDescriptorExtractor}}
+\index{IntensityDescriptorExtractor@{IntensityDescriptorExtractor}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{IntensityDescriptorExtractor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IntensityDescriptorExtractor} (
+\begin{DoxyParamCaption}
+\item[{int}]{raw\_\-gray\_\-stride, }
+\item[{int}]{feature\_\-window\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1IntensityDescriptorExtractor_ae89b1246e1e1a199bfcf70ce8e194f97}
+
+\begin{DoxyParams}{Parameters}
+{\em raw\_\-gray\_\-stride} & specifies the number of bytes separating each row of the input image. \\
+\hline
+{\em feature\_\-window\_\-size} & the size of the descriptor window. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor_aa1ad51fea7d5c44c9d1588a821ebafcd}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!populateDescriptorInterp@{populateDescriptorInterp}}
+\index{populateDescriptorInterp@{populateDescriptorInterp}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{populateDescriptorInterp}]{\setlength{\rightskip}{0pt plus 5cm}void populateDescriptorInterp (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t $\ast$}]{image, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{uint8\_\-t $\ast$}]{descriptor}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1IntensityDescriptorExtractor_aa1ad51fea7d5c44c9d1588a821ebafcd}
+Computes a single descriptor using bilinear interpolation at every point on the descriptor. This performs 4 floating point multiplications for every pixel in the descriptor.
+
+Assumes that the output parameter {\ttfamily is} 16-\/byte aligned. \hypertarget{classfovis_1_1IntensityDescriptorExtractor_a6741482f67c7acc2bbc6a45aa3e562b4}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!populateDescriptorAligned@{populateDescriptorAligned}}
+\index{populateDescriptorAligned@{populateDescriptorAligned}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{populateDescriptorAligned}]{\setlength{\rightskip}{0pt plus 5cm}void populateDescriptorAligned (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t $\ast$}]{image, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{uint8\_\-t $\ast$}]{descriptor}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1IntensityDescriptorExtractor_a6741482f67c7acc2bbc6a45aa3e562b4}
+Computes a single descriptor. Assumes that the output parameter {\ttfamily descriptor} is 16-\/byte aligned. \hypertarget{classfovis_1_1IntensityDescriptorExtractor_a6f626ae691f4031726a17453b3cce95c}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!populateDescriptorsInterp@{populateDescriptorsInterp}}
+\index{populateDescriptorsInterp@{populateDescriptorsInterp}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{populateDescriptorsInterp}]{\setlength{\rightskip}{0pt plus 5cm}void populateDescriptorsInterp (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t $\ast$}]{image, }
+\item[{const {\bf KeypointData} $\ast$}]{keypoints, }
+\item[{int}]{num\_\-keypoints, }
+\item[{uint8\_\-t $\ast$}]{descriptors}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1IntensityDescriptorExtractor_a6f626ae691f4031726a17453b3cce95c}
+Compute many descriptors using bilinear interpolation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & input image used for descriptor computation. \\
+\hline
+{\em keypoints} & keypoints for descriptor computation. \\
+\hline
+{\em num\_\-keypoints} & the number of keypoints. \\
+\hline
+{\em descriptors} & Must be 16-\/byte aligned and pre-\/allocated to {\ttfamily num\_\-keypoints} $\ast$ 16 $\ast$ \hyperlink{classfovis_1_1IntensityDescriptorExtractor_ab19595fa4e4bb6716f9ed7fa38a297b2}{getDescriptorStride()} bytes. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor_a78ac9f581501370c62b5213ebba152fa}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!populateDescriptorsAligned@{populateDescriptorsAligned}}
+\index{populateDescriptorsAligned@{populateDescriptorsAligned}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{populateDescriptorsAligned}]{\setlength{\rightskip}{0pt plus 5cm}void populateDescriptorsAligned (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t $\ast$}]{image, }
+\item[{const {\bf KeypointData} $\ast$}]{keypoints, }
+\item[{int}]{num\_\-keypoints, }
+\item[{uint8\_\-t $\ast$}]{descriptors}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1IntensityDescriptorExtractor_a78ac9f581501370c62b5213ebba152fa}
+Compute many descriptors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & input image used for descriptor computation. \\
+\hline
+{\em keypoints} & keypoints for descriptor computation. \\
+\hline
+{\em num\_\-keypoints} & the number of keypoints. \\
+\hline
+{\em descriptors} & Must be 16-\/byte aligned and pre-\/allocated to {\ttfamily num\_\-keypoints} $\ast$ 16 $\ast$ \hyperlink{classfovis_1_1IntensityDescriptorExtractor_ab19595fa4e4bb6716f9ed7fa38a297b2}{getDescriptorStride()} bytes. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor_ab19595fa4e4bb6716f9ed7fa38a297b2}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!getDescriptorStride@{getDescriptorStride}}
+\index{getDescriptorStride@{getDescriptorStride}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{getDescriptorStride}]{\setlength{\rightskip}{0pt plus 5cm}int getDescriptorStride (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1IntensityDescriptorExtractor_ab19595fa4e4bb6716f9ed7fa38a297b2}
+\begin{DoxyReturn}{Returns}
+the number of bytes that should separate descriptors in a vector of keypoint descriptors. This is usually a multiple of 16 so that each descriptor is 16-\/byte aligned. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor_acb4a60e9159801a3486dd6f2081cf346}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!getDescriptorIndexOffsets@{getDescriptorIndexOffsets}}
+\index{getDescriptorIndexOffsets@{getDescriptorIndexOffsets}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{getDescriptorIndexOffsets}]{\setlength{\rightskip}{0pt plus 5cm}const int$\ast$ getDescriptorIndexOffsets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1IntensityDescriptorExtractor_acb4a60e9159801a3486dd6f2081cf346}
+\begin{DoxyReturn}{Returns}
+an array of offset indices indicating the image offset of each descriptor pixel from the descriptor center pixel. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1IntensityDescriptorExtractor_ace19c8012ae7eaa4db2f807167b165f9}{
+\index{fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}!getDescriptorLength@{getDescriptorLength}}
+\index{getDescriptorLength@{getDescriptorLength}!fovis::IntensityDescriptorExtractor@{fovis::IntensityDescriptorExtractor}}
+\subsubsection[{getDescriptorLength}]{\setlength{\rightskip}{0pt plus 5cm}int getDescriptorLength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1IntensityDescriptorExtractor_ace19c8012ae7eaa4db2f807167b165f9}
+\begin{DoxyReturn}{Returns}
+the number of useful bytes in each descriptor. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+intensity\_\-descriptor.hpp\end{DoxyCompactItemize}

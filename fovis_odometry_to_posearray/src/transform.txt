@@ -1,0 +1,10 @@
+#include "eigen3/Eigen/Geometry"
+using namespace Eigen;
+
+Matrix3f m;
+m = AngleAxisf(yaw, Vector3f::UnitZ())*
+    AngleAxisf(pitch, Vector3f::UnitY())*
+    AngleAxisf(roll, Vector3f::UnitX());
+Quaternion<float> q(m);
+printf("The quaternion is %f %f %f %f\n", 
+       q.w(), q.x(), q.y(), q.z());

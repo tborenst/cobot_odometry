@@ -1,0 +1,110 @@
+\hypertarget{classfovis_1_1DepthImage}{
+\section{DepthImage Class Reference}
+\label{classfovis_1_1DepthImage}\index{fovis::DepthImage@{fovis::DepthImage}}
+}
+
+
+Depth source where a fully dense, metric depth image is available.  
+
+
+Inheritance diagram for DepthImage:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfovis_1_1DepthImage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfovis_1_1DepthImage_ad14961dd8148a0bde0f129e38f05ce05}{
+{\bfseries DepthImage} (const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \&rgb\_\-camera\_\-params, int depth\_\-width, int depth\_\-height)}
+\label{classfovis_1_1DepthImage_ad14961dd8148a0bde0f129e38f05ce05}
+
+\item 
+virtual double \hyperlink{classfovis_1_1DepthImage_a5429ab9acd4e4f8d154c952ff95b1149}{getBaseline} () const 
+\item 
+virtual void \hyperlink{classfovis_1_1DepthImage_a0b83e0c45768e90787bc7f0c2c77606d}{getXyz} (\hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$frame)
+\item 
+virtual bool \hyperlink{classfovis_1_1DepthImage_ab94d0972d755837688cfc95aa144a6e1}{haveXyz} (int u, int v)
+\item 
+virtual void \hyperlink{classfovis_1_1DepthImage_ad0922053f71946f74bc26225848010e6}{refineXyz} (\hyperlink{classfovis_1_1FeatureMatch}{FeatureMatch} $\ast$matches, int num\_\-matches, \hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$frame)
+\item 
+void \hyperlink{classfovis_1_1DepthImage_a02865b6272767324308c9b912d65a466}{setDepthImage} (const float $\ast$depth\_\-data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Depth source where a fully dense, metric depth image is available. 
+
+TODO 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1DepthImage_a02865b6272767324308c9b912d65a466}{
+\index{fovis::DepthImage@{fovis::DepthImage}!setDepthImage@{setDepthImage}}
+\index{setDepthImage@{setDepthImage}!fovis::DepthImage@{fovis::DepthImage}}
+\subsubsection[{setDepthImage}]{\setlength{\rightskip}{0pt plus 5cm}void setDepthImage (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$}]{depth\_\-data}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1DepthImage_a02865b6272767324308c9b912d65a466}
+Set the depth image, a width x height array of distances, units given in meters. Each pixel of the depth image corresponds to a point in the rectified RGB image. \hypertarget{classfovis_1_1DepthImage_ab94d0972d755837688cfc95aa144a6e1}{
+\index{fovis::DepthImage@{fovis::DepthImage}!haveXyz@{haveXyz}}
+\index{haveXyz@{haveXyz}!fovis::DepthImage@{fovis::DepthImage}}
+\subsubsection[{haveXyz}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool haveXyz (
+\begin{DoxyParamCaption}
+\item[{int}]{u, }
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classfovis_1_1DepthImage_ab94d0972d755837688cfc95aa144a6e1}
+This should return true if it's not certain there's no depth at (u,v). It should be an inexpensive check that is used to avoid pointless (hah!) creation of keypoints. False positives are fine as ling as getXyz gets rid of them. 
+
+Implements \hyperlink{classfovis_1_1DepthSource_ad0d2b9dd0e48e428319c3c84e87fa5cf}{DepthSource}.
+
+\hypertarget{classfovis_1_1DepthImage_a0b83e0c45768e90787bc7f0c2c77606d}{
+\index{fovis::DepthImage@{fovis::DepthImage}!getXyz@{getXyz}}
+\index{getXyz@{getXyz}!fovis::DepthImage@{fovis::DepthImage}}
+\subsubsection[{getXyz}]{\setlength{\rightskip}{0pt plus 5cm}virtual void getXyz (
+\begin{DoxyParamCaption}
+\item[{{\bf OdometryFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classfovis_1_1DepthImage_a0b83e0c45768e90787bc7f0c2c77606d}
+Populate keypoints in frame with XYZ data. 
+
+Implements \hyperlink{classfovis_1_1DepthSource_a0259f77a02ba85f5370407db4759d16a}{DepthSource}.
+
+\hypertarget{classfovis_1_1DepthImage_ad0922053f71946f74bc26225848010e6}{
+\index{fovis::DepthImage@{fovis::DepthImage}!refineXyz@{refineXyz}}
+\index{refineXyz@{refineXyz}!fovis::DepthImage@{fovis::DepthImage}}
+\subsubsection[{refineXyz}]{\setlength{\rightskip}{0pt plus 5cm}virtual void refineXyz (
+\begin{DoxyParamCaption}
+\item[{{\bf FeatureMatch} $\ast$}]{matches, }
+\item[{int}]{num\_\-matches, }
+\item[{{\bf OdometryFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classfovis_1_1DepthImage_ad0922053f71946f74bc26225848010e6}
+Refine XYZ data of target keypoints in matches (usually after subpixel refinement of the matches across time). 
+
+Implements \hyperlink{classfovis_1_1DepthSource_a4d6eafb84371d0720cd7ee53ac2e659a}{DepthSource}.
+
+\hypertarget{classfovis_1_1DepthImage_a5429ab9acd4e4f8d154c952ff95b1149}{
+\index{fovis::DepthImage@{fovis::DepthImage}!getBaseline@{getBaseline}}
+\index{getBaseline@{getBaseline}!fovis::DepthImage@{fovis::DepthImage}}
+\subsubsection[{getBaseline}]{\setlength{\rightskip}{0pt plus 5cm}virtual double getBaseline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classfovis_1_1DepthImage_a5429ab9acd4e4f8d154c952ff95b1149}
+Return baseline of depth source, if applicable. If not applicable (e.g. for OpenNI devices) return 0. 
+
+Implements \hyperlink{classfovis_1_1DepthSource_a22d76295f183f3ec9e34d2d7e837c675}{DepthSource}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+depth\_\-image.hpp\end{DoxyCompactItemize}

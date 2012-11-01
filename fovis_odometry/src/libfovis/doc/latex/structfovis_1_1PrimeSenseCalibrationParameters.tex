@@ -1,0 +1,95 @@
+\hypertarget{structfovis_1_1PrimeSenseCalibrationParameters}{
+\section{PrimeSenseCalibrationParameters Struct Reference}
+\label{structfovis_1_1PrimeSenseCalibrationParameters}\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+}
+
+
+Calibration data structure for Kinect / PrimeSense sensors.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_a02b8ac0eb76a582c54d1dd513d4ffb67}{depth\_\-params}
+\item 
+double \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_ae08cad90e6099b8284b8effd7a49e0d0}{depth\_\-to\_\-rgb\_\-quaternion} \mbox{[}4\mbox{]}
+\item 
+double \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_a239f2048204d50d626815962621abe00}{depth\_\-to\_\-rgb\_\-translation} \mbox{[}3\mbox{]}
+\item 
+int \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_ad12fc34ce789bce6c8a05d8a17138534}{height}
+\item 
+double \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_a7b21a23b56773fa0934aed19659d091a}{projector\_\-depth\_\-baseline}
+\item 
+\hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_a7c3992201264ae4b695547368383fc1d}{rgb\_\-params}
+\item 
+double \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_a3fafda545ad2c75f65a393e9312fa874}{shift\_\-offset}
+\item 
+int \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters_a2474a5474cbff19523a51eb1de01cda4}{width}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calibration data structure for Kinect / PrimeSense sensors. 
+
+This model is taken from the ROS wiki pages. TODO add a link here. Calibration parameters for this model can be fit by following the calibration procedure on the ROS wiki. TODO add a link here.
+
+PrimeSense sensors (e.g., Kinect and PrimeSense) produce a disparity map that can be used to compute a dense depth map. For a given pixel in the IR camera, with pixel coordinates \mbox{[}u, v\mbox{]} and disparity d, the depth to the imaged object can be described as:
+
+\[ z = \frac{8 * \mbox{projector\_depth\_baseline} * f}{(\mbox{shift\_offset} - d)} \]
+
+where $f$ is the IR camera focal length.
+
+The $x$ and $y$ coordinates, in the IR camera frame, can be computed as:
+
+\begin{eqnarray*} x &=& (u - c_x) \frac{z}{f} \\ y &=& (v - c_y) \frac{z}{f} \end{eqnarray*}
+
+where $[c_x, c_y]$ is the center of projection for the IR camera.
+
+Note that this coordinate convention is defined according to standard camera frames in computer graphics and vision, where +Z points along the optical axis away from the camera, +X is to the right, and +y is down. PrimeSense uses a different coordinate frame convention. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_a2474a5474cbff19523a51eb1de01cda4}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!width@{width}}
+\index{width@{width}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf width}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_a2474a5474cbff19523a51eb1de01cda4}
+image width \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_ad12fc34ce789bce6c8a05d8a17138534}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!height@{height}}
+\index{height@{height}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf height}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_ad12fc34ce789bce6c8a05d8a17138534}
+image height \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_a3fafda545ad2c75f65a393e9312fa874}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!shift\_\-offset@{shift\_\-offset}}
+\index{shift\_\-offset@{shift\_\-offset}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{shift\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf shift\_\-offset}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_a3fafda545ad2c75f65a393e9312fa874}
+fixed disparity offset. \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_a7b21a23b56773fa0934aed19659d091a}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!projector\_\-depth\_\-baseline@{projector\_\-depth\_\-baseline}}
+\index{projector\_\-depth\_\-baseline@{projector\_\-depth\_\-baseline}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{projector\_\-depth\_\-baseline}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf projector\_\-depth\_\-baseline}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_a7b21a23b56773fa0934aed19659d091a}
+distance from projector to depth camera (m) \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_a239f2048204d50d626815962621abe00}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!depth\_\-to\_\-rgb\_\-translation@{depth\_\-to\_\-rgb\_\-translation}}
+\index{depth\_\-to\_\-rgb\_\-translation@{depth\_\-to\_\-rgb\_\-translation}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{depth\_\-to\_\-rgb\_\-translation}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf depth\_\-to\_\-rgb\_\-translation}\mbox{[}3\mbox{]}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_a239f2048204d50d626815962621abe00}
+Translation vector: \mbox{[} x, y, z \mbox{]} \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_ae08cad90e6099b8284b8effd7a49e0d0}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!depth\_\-to\_\-rgb\_\-quaternion@{depth\_\-to\_\-rgb\_\-quaternion}}
+\index{depth\_\-to\_\-rgb\_\-quaternion@{depth\_\-to\_\-rgb\_\-quaternion}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{depth\_\-to\_\-rgb\_\-quaternion}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf depth\_\-to\_\-rgb\_\-quaternion}\mbox{[}4\mbox{]}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_ae08cad90e6099b8284b8effd7a49e0d0}
+Rotation quaternion: \mbox{[} w, x, y, z \mbox{]} \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_a02b8ac0eb76a582c54d1dd513d4ffb67}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!depth\_\-params@{depth\_\-params}}
+\index{depth\_\-params@{depth\_\-params}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{depth\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CameraIntrinsicsParameters} {\bf depth\_\-params}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_a02b8ac0eb76a582c54d1dd513d4ffb67}
+intrinsics of the IR camera. \hypertarget{structfovis_1_1PrimeSenseCalibrationParameters_a7c3992201264ae4b695547368383fc1d}{
+\index{fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}!rgb\_\-params@{rgb\_\-params}}
+\index{rgb\_\-params@{rgb\_\-params}!fovis::PrimeSenseCalibrationParameters@{fovis::PrimeSenseCalibrationParameters}}
+\subsubsection[{rgb\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CameraIntrinsicsParameters} {\bf rgb\_\-params}}}
+\label{structfovis_1_1PrimeSenseCalibrationParameters_a7c3992201264ae4b695547368383fc1d}
+intrinsics of the RGB camera. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+primesense\_\-depth.hpp\end{DoxyCompactItemize}

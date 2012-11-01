@@ -1,0 +1,190 @@
+\hypertarget{classfovis_1_1Rectification}{
+\section{Rectification Class Reference}
+\label{classfovis_1_1Rectification}\index{fovis::Rectification@{fovis::Rectification}}
+}
+
+
+Maps image coordinates from an input image to image coordinates on a rectified camera.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \& \hyperlink{classfovis_1_1Rectification_a26b289f3a9422898e0827833500f5a7f}{getInputCameraParameters} () const 
+\item 
+const Eigen::Matrix3d \& \hyperlink{classfovis_1_1Rectification_aad9df4b38b1c567ab56c3fceb1f51193}{getRectificationRotation} () const 
+\item 
+const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \& \hyperlink{classfovis_1_1Rectification_ac3e99685d2431ad016434b13edf5a7e0}{getRectifiedCameraParameters} () const 
+\item 
+\hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$ \hyperlink{classfovis_1_1Rectification_acd7ab855a169e8260203e83dc926e31c}{makeCopy} () const 
+\item 
+\hyperlink{classfovis_1_1Rectification_a850b5be87e72670261ef158a13a02606}{Rectification} (const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \&input\_\-camera\_\-params, const Eigen::Matrix3d \&rotation, const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \&rectified\_\-camera\_\-params)
+\item 
+\hyperlink{classfovis_1_1Rectification_a63a08ffa2c5fd3bf905f0a2949a14178}{Rectification} (const \hyperlink{structfovis_1_1CameraIntrinsicsParameters}{CameraIntrinsicsParameters} \&input\_\-camera\_\-params)
+\item 
+void \hyperlink{classfovis_1_1Rectification_a6ede2d21c8bfe048f16ec510e53bd7c7}{rectifyBilinearLookup} (const Eigen::Vector2d \&dist\_\-uv, Eigen::Vector2d $\ast$rect\_\-uv) const 
+\item 
+void \hyperlink{classfovis_1_1Rectification_a997ec4bb4cf597491445a8e42e183e5d}{rectifyLookup} (int dist\_\-u, int dist\_\-v, Eigen::Vector2d $\ast$rect\_\-uv) const 
+\item 
+void \hyperlink{classfovis_1_1Rectification_ac898654ec6adbc843e8e036736ae077f}{rectifyLookupByIndex} (int pixel\_\-index, Eigen::Vector2d $\ast$rect\_\-uv) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Maps image coordinates from an input image to image coordinates on a rectified camera. 
+
+A \hyperlink{classfovis_1_1Rectification}{Rectification} object represents the computation required to map pixels from an input camera to pixels on a \char`\"{}rectified\char`\"{} virtual camera that shares the same focal point, but may be rotated and have different projection parameters (e.g., focal length, center of projection, etc.)
+
+This class is primary useful with stereo cameras to rectify pixels on both input cameras to rectified cameras that share an image plane and look/up vectors. It can also be used for simple undistortion (e.g., no rotation, and a rectified camera that has the same projection parameters as the input camera, but with no distortion).
+
+For fast rectification, the \hyperlink{classfovis_1_1Rectification}{Rectification} object precomputes a mapping from (u, v) image pixel coordinates to u', v' rectified image pixel coordinates. The exact transformation from (u, v) to (u', v') is:
+
+
+\begin{DoxyEnumerate}
+\item undistort according to a plumb-\/bob distortion model
+\item rotate points about the origin
+\item reproject onto a rectified image plane.
+\end{DoxyEnumerate}
+
+\hyperlink{classfovis_1_1Rectification}{Rectification} of pixels is done by bilinear interpolation on this precomputed mapping. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfovis_1_1Rectification_a63a08ffa2c5fd3bf905f0a2949a14178}{
+\index{fovis::Rectification@{fovis::Rectification}!Rectification@{Rectification}}
+\index{Rectification@{Rectification}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{Rectification}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rectification} (
+\begin{DoxyParamCaption}
+\item[{const {\bf CameraIntrinsicsParameters} \&}]{input\_\-camera\_\-params}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1Rectification_a63a08ffa2c5fd3bf905f0a2949a14178}
+Convenience constructor to create a \hyperlink{classfovis_1_1Rectification}{Rectification} object that simply undistorts. The rotation is set to identity, and the rectified camera parameters are identical to the input camera parameters, but have no distortion. \hypertarget{classfovis_1_1Rectification_a850b5be87e72670261ef158a13a02606}{
+\index{fovis::Rectification@{fovis::Rectification}!Rectification@{Rectification}}
+\index{Rectification@{Rectification}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{Rectification}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rectification} (
+\begin{DoxyParamCaption}
+\item[{const {\bf CameraIntrinsicsParameters} \&}]{input\_\-camera\_\-params, }
+\item[{const Eigen::Matrix3d \&}]{rotation, }
+\item[{const {\bf CameraIntrinsicsParameters} \&}]{rectified\_\-camera\_\-params}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1Rectification_a850b5be87e72670261ef158a13a02606}
+Constructor. The rectified\_\-camera\_\-params are not allowed to have any distortion. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1Rectification_a26b289f3a9422898e0827833500f5a7f}{
+\index{fovis::Rectification@{fovis::Rectification}!getInputCameraParameters@{getInputCameraParameters}}
+\index{getInputCameraParameters@{getInputCameraParameters}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{getInputCameraParameters}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CameraIntrinsicsParameters}\& getInputCameraParameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1Rectification_a26b289f3a9422898e0827833500f5a7f}
+\begin{DoxyReturn}{Returns}
+the intrisic parameters of the input camera. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1Rectification_aad9df4b38b1c567ab56c3fceb1f51193}{
+\index{fovis::Rectification@{fovis::Rectification}!getRectificationRotation@{getRectificationRotation}}
+\index{getRectificationRotation@{getRectificationRotation}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{getRectificationRotation}]{\setlength{\rightskip}{0pt plus 5cm}const Eigen::Matrix3d\& getRectificationRotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1Rectification_aad9df4b38b1c567ab56c3fceb1f51193}
+\begin{DoxyReturn}{Returns}
+the rotation to apply between the undistorted input camera frame and the output rectified camera frame. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1Rectification_ac3e99685d2431ad016434b13edf5a7e0}{
+\index{fovis::Rectification@{fovis::Rectification}!getRectifiedCameraParameters@{getRectifiedCameraParameters}}
+\index{getRectifiedCameraParameters@{getRectifiedCameraParameters}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{getRectifiedCameraParameters}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CameraIntrinsicsParameters}\& getRectifiedCameraParameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1Rectification_ac3e99685d2431ad016434b13edf5a7e0}
+\begin{DoxyReturn}{Returns}
+the projection parameters of the rectified camera. The distortion coefficients will always be zero. Note that the focal length and image dimensions of the rectified camera do not have to match those of the input camera. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1Rectification_a997ec4bb4cf597491445a8e42e183e5d}{
+\index{fovis::Rectification@{fovis::Rectification}!rectifyLookup@{rectifyLookup}}
+\index{rectifyLookup@{rectifyLookup}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{rectifyLookup}]{\setlength{\rightskip}{0pt plus 5cm}void rectifyLookup (
+\begin{DoxyParamCaption}
+\item[{int}]{dist\_\-u, }
+\item[{int}]{dist\_\-v, }
+\item[{Eigen::Vector2d $\ast$}]{rect\_\-uv}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1Rectification_a997ec4bb4cf597491445a8e42e183e5d}
+Computes the undistorted image coordinates of the input distorted coordinates ({\ttfamily dist\_\-u}, {\ttfamily dist\_\-v}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em dist\_\-u} & input distorted pixel u/x coordinate. \\
+\hline
+{\em dist\_\-v} & input distorted pixel v/y coordinate. \\
+\hline
+{\em rect\_\-uv} & output parameter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfovis_1_1Rectification_ac898654ec6adbc843e8e036736ae077f}{
+\index{fovis::Rectification@{fovis::Rectification}!rectifyLookupByIndex@{rectifyLookupByIndex}}
+\index{rectifyLookupByIndex@{rectifyLookupByIndex}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{rectifyLookupByIndex}]{\setlength{\rightskip}{0pt plus 5cm}void rectifyLookupByIndex (
+\begin{DoxyParamCaption}
+\item[{int}]{pixel\_\-index, }
+\item[{Eigen::Vector2d $\ast$}]{rect\_\-uv}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1Rectification_ac898654ec6adbc843e8e036736ae077f}
+Computes the undistorted image coordinates of an input pixel specified by its row-\/major pixel index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel\_\-index} & corresponds to $ u * width + v $ \\
+\hline
+{\em rect\_\-uv} & output parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classfovis_1_1Rectification_a997ec4bb4cf597491445a8e42e183e5d}{rectifyLookup} 
+\end{DoxySeeAlso}
+\hypertarget{classfovis_1_1Rectification_a6ede2d21c8bfe048f16ec510e53bd7c7}{
+\index{fovis::Rectification@{fovis::Rectification}!rectifyBilinearLookup@{rectifyBilinearLookup}}
+\index{rectifyBilinearLookup@{rectifyBilinearLookup}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{rectifyBilinearLookup}]{\setlength{\rightskip}{0pt plus 5cm}void rectifyBilinearLookup (
+\begin{DoxyParamCaption}
+\item[{const Eigen::Vector2d \&}]{dist\_\-uv, }
+\item[{Eigen::Vector2d $\ast$}]{rect\_\-uv}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1Rectification_a6ede2d21c8bfe048f16ec510e53bd7c7}
+Computes the undistorted image coordinates of an input pixel via bilinear interpolation of its integer-\/coordinate 4-\/neighboors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dist\_\-uv} & input distorted pixel coordinates. \\
+\hline
+{\em rect\_\-uv} & output parameter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfovis_1_1Rectification_acd7ab855a169e8260203e83dc926e31c}{
+\index{fovis::Rectification@{fovis::Rectification}!makeCopy@{makeCopy}}
+\index{makeCopy@{makeCopy}!fovis::Rectification@{fovis::Rectification}}
+\subsubsection[{makeCopy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rectification}$\ast$ makeCopy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1Rectification_acd7ab855a169e8260203e83dc926e31c}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+rectification.hpp\end{DoxyCompactItemize}

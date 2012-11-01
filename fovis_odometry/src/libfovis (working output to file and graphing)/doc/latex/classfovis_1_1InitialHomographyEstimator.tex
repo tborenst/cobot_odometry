@@ -1,0 +1,66 @@
+\hypertarget{classfovis_1_1InitialHomographyEstimator}{
+\section{InitialHomographyEstimator Class Reference}
+\label{classfovis_1_1InitialHomographyEstimator}\index{fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}}
+}
+
+
+Estimates a rough 2D homography registering two images.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfovis_1_1InitialHomographyEstimator_aaa00392f56809e71fdeeb250cef2c323}{setTemplateImage} (const uint8\_\-t $\ast$grayData, int width, int height, int stride, int downsampleFactor)
+\item 
+void \hyperlink{classfovis_1_1InitialHomographyEstimator_a1b396c2110d51803d5993808b8c81fbf}{setTestImage} (const uint8\_\-t $\ast$grayData, int width, int height, int stride, int downsampleFactor)
+\item 
+Eigen::Matrix3f \hyperlink{classfovis_1_1InitialHomographyEstimator_a433869e74d5e2738425ff4292b4446bb}{track} (const Eigen::Matrix3f \&init\_\-H, int nIters, double $\ast$finalRMS)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Estimates a rough 2D homography registering two images. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1InitialHomographyEstimator_aaa00392f56809e71fdeeb250cef2c323}{
+\index{fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}!setTemplateImage@{setTemplateImage}}
+\index{setTemplateImage@{setTemplateImage}!fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}}
+\subsubsection[{setTemplateImage}]{\setlength{\rightskip}{0pt plus 5cm}void setTemplateImage (
+\begin{DoxyParamCaption}
+\item[{const uint8\_\-t $\ast$}]{grayData, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{int}]{stride, }
+\item[{int}]{downsampleFactor}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1InitialHomographyEstimator_aaa00392f56809e71fdeeb250cef2c323}
+Set the template image to the passed in arguments. assumes the image data is row-\/major. The image will be downsampled by $ 1/2^{downsampleFactor} $ \hypertarget{classfovis_1_1InitialHomographyEstimator_a1b396c2110d51803d5993808b8c81fbf}{
+\index{fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}!setTestImage@{setTestImage}}
+\index{setTestImage@{setTestImage}!fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}}
+\subsubsection[{setTestImage}]{\setlength{\rightskip}{0pt plus 5cm}void setTestImage (
+\begin{DoxyParamCaption}
+\item[{const uint8\_\-t $\ast$}]{grayData, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{int}]{stride, }
+\item[{int}]{downsampleFactor}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1InitialHomographyEstimator_a1b396c2110d51803d5993808b8c81fbf}
+Set the test image accordingly. The opimization will warp this image to match the template assumes the image data is row-\/major. The image will be downsampled by $ 1/2^{downsampleFactor} $ \hypertarget{classfovis_1_1InitialHomographyEstimator_a433869e74d5e2738425ff4292b4446bb}{
+\index{fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}!track@{track}}
+\index{track@{track}!fovis::InitialHomographyEstimator@{fovis::InitialHomographyEstimator}}
+\subsubsection[{track}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix3f track (
+\begin{DoxyParamCaption}
+\item[{const Eigen::Matrix3f \&}]{init\_\-H, }
+\item[{int}]{nIters, }
+\item[{double $\ast$}]{finalRMS}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1InitialHomographyEstimator_a433869e74d5e2738425ff4292b4446bb}
+Run ESM to find the homography between the template and test images. These should have already been passed in using the methods \hyperlink{classfovis_1_1InitialHomographyEstimator_aaa00392f56809e71fdeeb250cef2c323}{setTemplateImage()}, and \hyperlink{classfovis_1_1InitialHomographyEstimator_a1b396c2110d51803d5993808b8c81fbf}{setTestImage()}. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+initial\_\-homography\_\-estimation.hpp\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+\hypertarget{structfovis_1_1CameraIntrinsicsParameters}{
+\section{CameraIntrinsicsParameters Struct Reference}
+\label{structfovis_1_1CameraIntrinsicsParameters}\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+}
+
+
+Intrinsic parameters for a pinhole camera with plumb-\/bob distortion model.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen::Matrix$<$ double, 3, 4 $>$ \hyperlink{structfovis_1_1CameraIntrinsicsParameters_ac69fdeedc0b10760b43b6acfa58f6807}{toProjectionMatrix} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_ac176cb816ac192bd8ec2f73c40b43309}{cx}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_a2d6a093e4a6fe06658d3d01563d028c9}{cy}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_aa7e88347476ef454086e7c3cd9865460}{fx}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_a03c4ce20c7e4b8c6d60a20b833be69fe}{fy}
+\item 
+int \hyperlink{structfovis_1_1CameraIntrinsicsParameters_ad12fc34ce789bce6c8a05d8a17138534}{height}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_a830ffdbe06791ff8f55f8070464e5023}{k1}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_a5fa2323820f58decc76532df11cd3ab8}{k2}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_a514147779f4e2774d6e0887cbf531c95}{k3}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_afe3ec2bbc515ef1c2c03dccf567831f4}{p1}
+\item 
+double \hyperlink{structfovis_1_1CameraIntrinsicsParameters_afb3d783e05c27da8ea3c53c9d2e17af1}{p2}
+\item 
+int \hyperlink{structfovis_1_1CameraIntrinsicsParameters_a2474a5474cbff19523a51eb1de01cda4}{width}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Intrinsic parameters for a pinhole camera with plumb-\/bob distortion model. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structfovis_1_1CameraIntrinsicsParameters_ac69fdeedc0b10760b43b6acfa58f6807}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!toProjectionMatrix@{toProjectionMatrix}}
+\index{toProjectionMatrix@{toProjectionMatrix}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{toProjectionMatrix}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix$<$double, 3, 4$>$ toProjectionMatrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_ac69fdeedc0b10760b43b6acfa58f6807}
+
+\begin{DoxyCode}
+ [ fx 0  cx 0 ]
+ [ 0  fy cy 0 ]
+ [ 0  0  1  0 ]
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+a 3x4 projection matrix that transforms 3D homogeneous points in the camera frame to 2D homogeneous points in the image plane. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structfovis_1_1CameraIntrinsicsParameters_a2474a5474cbff19523a51eb1de01cda4}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!width@{width}}
+\index{width@{width}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf width}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_a2474a5474cbff19523a51eb1de01cda4}
+Image width. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_ad12fc34ce789bce6c8a05d8a17138534}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!height@{height}}
+\index{height@{height}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf height}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_ad12fc34ce789bce6c8a05d8a17138534}
+Image height. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_aa7e88347476ef454086e7c3cd9865460}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!fx@{fx}}
+\index{fx@{fx}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{fx}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fx}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_aa7e88347476ef454086e7c3cd9865460}
+focal length along the X axis. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_a03c4ce20c7e4b8c6d60a20b833be69fe}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!fy@{fy}}
+\index{fy@{fy}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{fy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fy}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_a03c4ce20c7e4b8c6d60a20b833be69fe}
+focal length along the Y axis. Should generally be the same as {\ttfamily fx}. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_ac176cb816ac192bd8ec2f73c40b43309}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!cx@{cx}}
+\index{cx@{cx}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{cx}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cx}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_ac176cb816ac192bd8ec2f73c40b43309}
+X-\/coordinate of the camera center of projection / principal point. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_a2d6a093e4a6fe06658d3d01563d028c9}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!cy@{cy}}
+\index{cy@{cy}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{cy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cy}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_a2d6a093e4a6fe06658d3d01563d028c9}
+Y-\/coordinate of the camera center of projection / principal point. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_a830ffdbe06791ff8f55f8070464e5023}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!k1@{k1}}
+\index{k1@{k1}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{k1}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf k1}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_a830ffdbe06791ff8f55f8070464e5023}
+First radial distortion coefficient (r$^\wedge$2) for a plumb-\/bob distortion model.
+
+\begin{DoxySeeAlso}{See also}
+\href{http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/parameters.html}{\tt http://www.vision.caltech.edu/bouguetj/calib\_\-doc/htmls/parameters.html} 
+\end{DoxySeeAlso}
+\hypertarget{structfovis_1_1CameraIntrinsicsParameters_a5fa2323820f58decc76532df11cd3ab8}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!k2@{k2}}
+\index{k2@{k2}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{k2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf k2}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_a5fa2323820f58decc76532df11cd3ab8}
+Second radial distortion coefficient (r$^\wedge$4) for a plumb-\/bob distortion model. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_a514147779f4e2774d6e0887cbf531c95}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!k3@{k3}}
+\index{k3@{k3}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{k3}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf k3}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_a514147779f4e2774d6e0887cbf531c95}
+Third radial distortion coefficient (r$^\wedge$6) for a plumb-\/bob distortion model. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_afe3ec2bbc515ef1c2c03dccf567831f4}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!p1@{p1}}
+\index{p1@{p1}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{p1}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf p1}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_afe3ec2bbc515ef1c2c03dccf567831f4}
+First tangential distortion coefficient for a plumb-\/bob distortion model. \hypertarget{structfovis_1_1CameraIntrinsicsParameters_afb3d783e05c27da8ea3c53c9d2e17af1}{
+\index{fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}!p2@{p2}}
+\index{p2@{p2}!fovis::CameraIntrinsicsParameters@{fovis::CameraIntrinsicsParameters}}
+\subsubsection[{p2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf p2}}}
+\label{structfovis_1_1CameraIntrinsicsParameters_afb3d783e05c27da8ea3c53c9d2e17af1}
+Second tangential distortion coefficient for a plumb-\/bob distortion model. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+camera\_\-intrinsics.hpp\end{DoxyCompactItemize}

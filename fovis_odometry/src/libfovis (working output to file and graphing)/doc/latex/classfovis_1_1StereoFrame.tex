@@ -1,0 +1,47 @@
+\hypertarget{classfovis_1_1StereoFrame}{
+\section{StereoFrame Class Reference}
+\label{classfovis_1_1StereoFrame}\index{fovis::StereoFrame@{fovis::StereoFrame}}
+}
+
+
+Stores the right-\/hand image for a stereo pair.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfovis_1_1StereoFrame_a3a922a072358cf7d3b82235613f7e129}{
+\hyperlink{classfovis_1_1PyramidLevel}{PyramidLevel} $\ast$ {\bfseries getLevel} (int level\_\-num)}
+\label{classfovis_1_1StereoFrame_a3a922a072358cf7d3b82235613f7e129}
+
+\item 
+\hypertarget{classfovis_1_1StereoFrame_a6b34494d5f8a1666d216bae16f25640b}{
+int {\bfseries getNumDetectedKeypoints} () const }
+\label{classfovis_1_1StereoFrame_a6b34494d5f8a1666d216bae16f25640b}
+
+\item 
+\hypertarget{classfovis_1_1StereoFrame_a3e247d49631478f3ada787127e798de0}{
+void {\bfseries prepareFrame} (const uint8\_\-t $\ast$raw\_\-gray, int fast\_\-threshold)}
+\label{classfovis_1_1StereoFrame_a3e247d49631478f3ada787127e798de0}
+
+\item 
+\hypertarget{classfovis_1_1StereoFrame_a581c51ce9ea9ac8f8488fbf9803055c0}{
+void {\bfseries rectify} (Eigen::Vector2d xy\_\-in, Eigen::Vector2d $\ast$out)}
+\label{classfovis_1_1StereoFrame_a581c51ce9ea9ac8f8488fbf9803055c0}
+
+\item 
+\hypertarget{classfovis_1_1StereoFrame_aa9dff05ab404552e991bef9c4e1c9876}{
+{\bfseries StereoFrame} (int width, int height, const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$rectify\_\-map, const \hyperlink{group__FovisCore_ga113578b67d3e37bc78f1fffd8440e1ff}{VisualOdometryOptions} \&options)}
+\label{classfovis_1_1StereoFrame_aa9dff05ab404552e991bef9c4e1c9876}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the right-\/hand image for a stereo pair. 
+
+TODO 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+stereo\_\-frame.hpp\end{DoxyCompactItemize}

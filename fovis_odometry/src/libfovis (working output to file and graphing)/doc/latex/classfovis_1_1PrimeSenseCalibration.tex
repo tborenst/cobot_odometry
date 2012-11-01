@@ -1,0 +1,117 @@
+\hypertarget{classfovis_1_1PrimeSenseCalibration}{
+\section{PrimeSenseCalibration Class Reference}
+\label{classfovis_1_1PrimeSenseCalibration}\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+}
+
+
+Computes useful information from a \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters}{PrimeSenseCalibrationParameters} object.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen::Matrix4d \hyperlink{classfovis_1_1PrimeSenseCalibration_aa43ac49d34f38d0e9e0832095a4de0b2}{getDepthUvdToDepthXyz} () const 
+\item 
+Eigen::Matrix$<$ double, 3, 4 $>$ \hyperlink{classfovis_1_1PrimeSenseCalibration_a43fefe8a116641f2b13f36d9c4c56769}{getDepthUvdToRgbUvw} () const 
+\item 
+Eigen::Matrix4d \hyperlink{classfovis_1_1PrimeSenseCalibration_a26e97ef13e577339bd0a65436520dd8c}{getDepthUvdToRgbXyz} () const 
+\item 
+Eigen::Isometry3d \hyperlink{classfovis_1_1PrimeSenseCalibration_a83ad17d21565728e4fe11f7a354898f9}{getDepthXyzToRgbXyz} () const 
+\item 
+const \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters}{PrimeSenseCalibrationParameters} \& \hyperlink{classfovis_1_1PrimeSenseCalibration_a5ada9aeb464dbf970ca3ab17b00e2e80}{getParameters} () const 
+\item 
+const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$ \hyperlink{classfovis_1_1PrimeSenseCalibration_a2cf5ecdfafecd94c7a779cc6ff2e7f2b}{getRgbRectification} () const 
+\item 
+Eigen::Matrix$<$ double, 3, 4 $>$ \hyperlink{classfovis_1_1PrimeSenseCalibration_a432a9f0c26b6438095774e8a60dcb892}{getRgbXyzToRgbUvw} () const 
+\item 
+\hyperlink{classfovis_1_1PrimeSenseCalibration_a594fad2cbbce12a3e74c7427357c733c}{PrimeSenseCalibration} (const \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters}{PrimeSenseCalibrationParameters} \&params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Computes useful information from a \hyperlink{structfovis_1_1PrimeSenseCalibrationParameters}{PrimeSenseCalibrationParameters} object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfovis_1_1PrimeSenseCalibration_a594fad2cbbce12a3e74c7427357c733c}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!PrimeSenseCalibration@{PrimeSenseCalibration}}
+\index{PrimeSenseCalibration@{PrimeSenseCalibration}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{PrimeSenseCalibration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PrimeSenseCalibration} (
+\begin{DoxyParamCaption}
+\item[{const {\bf PrimeSenseCalibrationParameters} \&}]{params}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1PrimeSenseCalibration_a594fad2cbbce12a3e74c7427357c733c}
+Constructs a \hyperlink{classfovis_1_1PrimeSenseCalibration}{PrimeSenseCalibration} object using the specified parameters. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1PrimeSenseCalibration_aa43ac49d34f38d0e9e0832095a4de0b2}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getDepthUvdToDepthXyz@{getDepthUvdToDepthXyz}}
+\index{getDepthUvdToDepthXyz@{getDepthUvdToDepthXyz}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getDepthUvdToDepthXyz}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix4d getDepthUvdToDepthXyz (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_aa43ac49d34f38d0e9e0832095a4de0b2}
+Compute the 4x4 transformation matrix mapping \mbox{[} u, v, disparity, 1 \mbox{]} coordinates to \mbox{[} x, y, z, w \mbox{]} homogeneous coordinates in depth camera space. \hypertarget{classfovis_1_1PrimeSenseCalibration_a83ad17d21565728e4fe11f7a354898f9}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getDepthXyzToRgbXyz@{getDepthXyzToRgbXyz}}
+\index{getDepthXyzToRgbXyz@{getDepthXyzToRgbXyz}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getDepthXyzToRgbXyz}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Isometry3d getDepthXyzToRgbXyz (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_a83ad17d21565728e4fe11f7a354898f9}
+Compute the transformation mapping \mbox{[} x, y, z, w \mbox{]} coordinates in depth camera space to RGB camera space. \hypertarget{classfovis_1_1PrimeSenseCalibration_a432a9f0c26b6438095774e8a60dcb892}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getRgbXyzToRgbUvw@{getRgbXyzToRgbUvw}}
+\index{getRgbXyzToRgbUvw@{getRgbXyzToRgbUvw}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getRgbXyzToRgbUvw}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix$<$double, 3, 4$>$ getRgbXyzToRgbUvw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_a432a9f0c26b6438095774e8a60dcb892}
+Compute the 3x4 transformation matrix projecting \mbox{[} x, y, z, w \mbox{]} coordinates in RGB camera space to RGB image space. \hypertarget{classfovis_1_1PrimeSenseCalibration_a43fefe8a116641f2b13f36d9c4c56769}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getDepthUvdToRgbUvw@{getDepthUvdToRgbUvw}}
+\index{getDepthUvdToRgbUvw@{getDepthUvdToRgbUvw}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getDepthUvdToRgbUvw}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix$<$double, 3, 4$>$ getDepthUvdToRgbUvw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_a43fefe8a116641f2b13f36d9c4c56769}
+Convenience function to retrieve the transformation mapping \mbox{[}u, v, disparity\mbox{]} coordinates in the depth camera space to \mbox{[}u, v, w\mbox{]} coordinates in rectified RGB image space. In most cases, the w coordinate will not be 1, so to normalize the \mbox{[}u, v, w\mbox{]} homogeneous coordinate to pixel coordinates, u and v need to be divided by w. \hypertarget{classfovis_1_1PrimeSenseCalibration_a26e97ef13e577339bd0a65436520dd8c}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getDepthUvdToRgbXyz@{getDepthUvdToRgbXyz}}
+\index{getDepthUvdToRgbXyz@{getDepthUvdToRgbXyz}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getDepthUvdToRgbXyz}]{\setlength{\rightskip}{0pt plus 5cm}Eigen::Matrix4d getDepthUvdToRgbXyz (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_a26e97ef13e577339bd0a65436520dd8c}
+Convenience function to retrieve the transformation mapping \mbox{[}u, v, disparity\mbox{]} coordinates in the depth camera space to \mbox{[}X, Y, Z, W\mbox{]} coordinates in RGB XYZ space. \hypertarget{classfovis_1_1PrimeSenseCalibration_a5ada9aeb464dbf970ca3ab17b00e2e80}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getParameters@{getParameters}}
+\index{getParameters@{getParameters}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getParameters}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PrimeSenseCalibrationParameters}\& getParameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_a5ada9aeb464dbf970ca3ab17b00e2e80}
+\begin{DoxyReturn}{Returns}
+the calibration parameters used to initialize this object. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1PrimeSenseCalibration_a2cf5ecdfafecd94c7a779cc6ff2e7f2b}{
+\index{fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}!getRgbRectification@{getRgbRectification}}
+\index{getRgbRectification@{getRgbRectification}!fovis::PrimeSenseCalibration@{fovis::PrimeSenseCalibration}}
+\subsubsection[{getRgbRectification}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Rectification}$\ast$ getRgbRectification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1PrimeSenseCalibration_a2cf5ecdfafecd94c7a779cc6ff2e7f2b}
+return the rectification object calculated from the calibration parameters. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+primesense\_\-depth.hpp\end{DoxyCompactItemize}

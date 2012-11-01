@@ -1,0 +1,76 @@
+\hypertarget{classfovis_1_1GridKeyPointFilter}{
+\section{GridKeyPointFilter Class Reference}
+\label{classfovis_1_1GridKeyPointFilter}\index{fovis::GridKeyPointFilter@{fovis::GridKeyPointFilter}}
+}
+
+
+Places features into grid cells and discards the weakest features in each cell.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfovis_1_1GridKeyPointFilter_af5f860867a8c45901c2b56cb208742f9}{filter} (std::vector$<$ \hyperlink{classfovis_1_1KeyPoint}{KeyPoint} $>$ $\ast$keypoints)
+\item 
+\hyperlink{classfovis_1_1GridKeyPointFilter_a8f2d11b65b3438c4594e6a55ae8ab942}{GridKeyPointFilter} (int img\_\-width, int img\_\-height, int bucket\_\-width, int bucket\_\-height, int max\_\-keypoints\_\-per\_\-bucket)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Places features into grid cells and discards the weakest features in each cell. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfovis_1_1GridKeyPointFilter_a8f2d11b65b3438c4594e6a55ae8ab942}{
+\index{fovis::GridKeyPointFilter@{fovis::GridKeyPointFilter}!GridKeyPointFilter@{GridKeyPointFilter}}
+\index{GridKeyPointFilter@{GridKeyPointFilter}!fovis::GridKeyPointFilter@{fovis::GridKeyPointFilter}}
+\subsubsection[{GridKeyPointFilter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GridKeyPointFilter} (
+\begin{DoxyParamCaption}
+\item[{int}]{img\_\-width, }
+\item[{int}]{img\_\-height, }
+\item[{int}]{bucket\_\-width, }
+\item[{int}]{bucket\_\-height, }
+\item[{int}]{max\_\-keypoints\_\-per\_\-bucket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1GridKeyPointFilter_a8f2d11b65b3438c4594e6a55ae8ab942}
+Construct a keypoint filter.
+
+Conceptually, lays down a grid over the image and sorts keypoints into a grid cell based on their image locations. Then removes the weakest keypoints in each cell (using the Keypoint::score field) until there are at most {\ttfamily max\_\-keypoints\_\-per\_\-bucket} in each grid cell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\_\-width} & the width of the input image. \\
+\hline
+{\em img\_\-height} & the height of the input image. \\
+\hline
+{\em bucket\_\-width} & the width of each bucket. \\
+\hline
+{\em bucket\_\-height} & the height of each bucket. \\
+\hline
+{\em max\_\-keypoints\_\-per\_\-bucket} & the maximum number of keypoints in each grid cell after filtering. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1GridKeyPointFilter_af5f860867a8c45901c2b56cb208742f9}{
+\index{fovis::GridKeyPointFilter@{fovis::GridKeyPointFilter}!filter@{filter}}
+\index{filter@{filter}!fovis::GridKeyPointFilter@{fovis::GridKeyPointFilter}}
+\subsubsection[{filter}]{\setlength{\rightskip}{0pt plus 5cm}void filter (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf KeyPoint} $>$ $\ast$}]{keypoints}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1GridKeyPointFilter_af5f860867a8c45901c2b56cb208742f9}
+filters the specified vector of keypoints.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keypoints} & input/output parameter. On output, the weakest keypoints in each grid cell will have been removed from this vector. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+grid\_\-filter.hpp\end{DoxyCompactItemize}

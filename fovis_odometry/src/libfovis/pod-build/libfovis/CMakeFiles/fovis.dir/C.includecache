@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/twhyte/projects/libfovis/libfovis/gauss_pyramid.c
+gauss_pyramid.h
+/home/twhyte/projects/libfovis/libfovis/gauss_pyramid.h
+
+/home/twhyte/projects/libfovis/libfovis/gauss_pyramid.h
+stdint.h
+-
+

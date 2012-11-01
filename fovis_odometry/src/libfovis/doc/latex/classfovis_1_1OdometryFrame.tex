@@ -1,0 +1,69 @@
+\hypertarget{classfovis_1_1OdometryFrame}{
+\section{OdometryFrame Class Reference}
+\label{classfovis_1_1OdometryFrame}\index{fovis::OdometryFrame@{fovis::OdometryFrame}}
+}
+
+
+Stores data specific to an input frame.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_ad863915a3ff363865748cb880ead406c}{
+int {\bfseries getFeatureWindowSize} () const }
+\label{classfovis_1_1OdometryFrame_ad863915a3ff363865748cb880ead406c}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_af940532ad78bdfc5b747bdee6235c932}{
+const \hyperlink{classfovis_1_1PyramidLevel}{PyramidLevel} $\ast$ {\bfseries getLevel} (int i) const }
+\label{classfovis_1_1OdometryFrame_af940532ad78bdfc5b747bdee6235c932}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_af0db382022a6a1e6e24c88fa2f7cfdd6}{
+\hyperlink{classfovis_1_1PyramidLevel}{PyramidLevel} $\ast$ {\bfseries getLevel} (int i)}
+\label{classfovis_1_1OdometryFrame_af0db382022a6a1e6e24c88fa2f7cfdd6}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_a6b34494d5f8a1666d216bae16f25640b}{
+int {\bfseries getNumDetectedKeypoints} () const }
+\label{classfovis_1_1OdometryFrame_a6b34494d5f8a1666d216bae16f25640b}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_ac411e38b8e5d28686355d6e7afece27f}{
+int {\bfseries getNumKeypoints} () const }
+\label{classfovis_1_1OdometryFrame_ac411e38b8e5d28686355d6e7afece27f}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_a3968e8ed365b6f380fd1fb8bdb2f3b81}{
+int {\bfseries getNumLevels} () const }
+\label{classfovis_1_1OdometryFrame_a3968e8ed365b6f380fd1fb8bdb2f3b81}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_afb94538eb0c8c699d42f3ef1515e45ca}{
+{\bfseries OdometryFrame} (const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$rectification, const \hyperlink{group__FovisCore_ga113578b67d3e37bc78f1fffd8440e1ff}{VisualOdometryOptions} \&options)}
+\label{classfovis_1_1OdometryFrame_afb94538eb0c8c699d42f3ef1515e45ca}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_a681bd541c8e022181cc253410f0db82a}{
+void {\bfseries prepareFrame} (const uint8\_\-t $\ast$raw\_\-gray, int fast\_\-threshold, \hyperlink{classfovis_1_1DepthSource}{DepthSource} $\ast$depth\_\-source)}
+\label{classfovis_1_1OdometryFrame_a681bd541c8e022181cc253410f0db82a}
+
+\item 
+\hypertarget{classfovis_1_1OdometryFrame_a892c8032392efdef960a30a2e8cd817c}{
+void {\bfseries sanityCheck} () const }
+\label{classfovis_1_1OdometryFrame_a892c8032392efdef960a30a2e8cd817c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores data specific to an input frame. 
+
+\hyperlink{fovis_8hpp_source}{fovis/fovis.hpp}
+
+Stores grayscaled image, disparity map, keypoints (detected features), and keypoint descriptors. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+frame.hpp\end{DoxyCompactItemize}

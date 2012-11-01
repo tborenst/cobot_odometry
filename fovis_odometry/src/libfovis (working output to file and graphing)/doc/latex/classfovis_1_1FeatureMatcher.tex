@@ -1,0 +1,53 @@
+\hypertarget{classfovis_1_1FeatureMatcher}{
+\section{FeatureMatcher Class Reference}
+\label{classfovis_1_1FeatureMatcher}\index{fovis::FeatureMatcher@{fovis::FeatureMatcher}}
+}
+
+
+Matches features between a reference and a target image.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfovis_1_1FeatureMatcher_a3f102d9c195b071349c7f18365a05287}{matchFeatures} (\hyperlink{classfovis_1_1PyramidLevel}{PyramidLevel} $\ast$ref\_\-level, \hyperlink{classfovis_1_1PyramidLevel}{PyramidLevel} $\ast$target\_\-level, const std::vector$<$ std::vector$<$ int $>$ $>$ \&candidates, \hyperlink{classfovis_1_1FeatureMatch}{FeatureMatch} $\ast$matches, int $\ast$num\_\-matches)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Matches features between a reference and a target image. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1FeatureMatcher_a3f102d9c195b071349c7f18365a05287}{
+\index{fovis::FeatureMatcher@{fovis::FeatureMatcher}!matchFeatures@{matchFeatures}}
+\index{matchFeatures@{matchFeatures}!fovis::FeatureMatcher@{fovis::FeatureMatcher}}
+\subsubsection[{matchFeatures}]{\setlength{\rightskip}{0pt plus 5cm}void matchFeatures (
+\begin{DoxyParamCaption}
+\item[{{\bf PyramidLevel} $\ast$}]{ref\_\-level, }
+\item[{{\bf PyramidLevel} $\ast$}]{target\_\-level, }
+\item[{const std::vector$<$ std::vector$<$ int $>$ $>$ \&}]{candidates, }
+\item[{{\bf FeatureMatch} $\ast$}]{matches, }
+\item[{int $\ast$}]{num\_\-matches}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1FeatureMatcher_a3f102d9c195b071349c7f18365a05287}
+Feature matching using sum of absolute differences (\hyperlink{classfovis_1_1SAD}{SAD}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref\_\-level} & features in the reference image. \\
+\hline
+{\em target\_\-level} & features in the target image. \\
+\hline
+{\em candidates} & identifies potential match candidates for each feature in the reference image. For every reference feature, there is a vector of target feature indices that is a potential match. \\
+\hline
+{\em matches} & output array of matches. This should be pre-\/allocated and of size at least min(num features in {\ttfamily ref\_\-level}, num features in {\ttfamily target\_\-level}) \\
+\hline
+{\em num\_\-matches} & output parameter, is set to the number of features matched. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+feature\_\-matcher.hpp\end{DoxyCompactItemize}

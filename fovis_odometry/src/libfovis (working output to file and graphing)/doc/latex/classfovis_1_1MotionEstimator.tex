@@ -1,0 +1,82 @@
+\hypertarget{classfovis_1_1MotionEstimator}{
+\section{MotionEstimator Class Reference}
+\label{classfovis_1_1MotionEstimator}\index{fovis::MotionEstimator@{fovis::MotionEstimator}}
+}
+
+
+Does the heavy lifting for frame-\/to-\/frame motion estimation.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a0a9d692b99e362439b1c363e854e1f0d}{
+void {\bfseries estimateMotion} (\hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$reference\_\-frame, \hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$target\_\-frame, \hyperlink{classfovis_1_1DepthSource}{DepthSource} $\ast$depth\_\-source, const Eigen::Isometry3d \&init\_\-motion\_\-est, const Eigen::MatrixXd \&init\_\-motion\_\-cov)}
+\label{classfovis_1_1MotionEstimator_a0a9d692b99e362439b1c363e854e1f0d}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a8b52710e622490cc57812eab5dd517c4}{
+const \hyperlink{classfovis_1_1FeatureMatch}{FeatureMatch} $\ast$ {\bfseries getMatches} () const }
+\label{classfovis_1_1MotionEstimator_a8b52710e622490cc57812eab5dd517c4}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_af660d3133abdf4592d5b2f64c7f159c9}{
+double {\bfseries getMeanInlierReprojectionError} () const }
+\label{classfovis_1_1MotionEstimator_af660d3133abdf4592d5b2f64c7f159c9}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a7c8a153a489f90c60123666495900a72}{
+const Eigen::Isometry3d \& {\bfseries getMotionEstimate} () const }
+\label{classfovis_1_1MotionEstimator_a7c8a153a489f90c60123666495900a72}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a13c92fba48648f413eebccd6fde24e18}{
+const Eigen::MatrixXd \& {\bfseries getMotionEstimateCov} () const }
+\label{classfovis_1_1MotionEstimator_a13c92fba48648f413eebccd6fde24e18}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_ae03356861ab491be0d5e608c8cdd33a2}{
+MotionEstimateStatusCode {\bfseries getMotionEstimateStatus} () const }
+\label{classfovis_1_1MotionEstimator_ae03356861ab491be0d5e608c8cdd33a2}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_adf826f377022c6213c92026357b3e5f7}{
+int {\bfseries getNumInliers} () const }
+\label{classfovis_1_1MotionEstimator_adf826f377022c6213c92026357b3e5f7}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a5ce986836e2b931304b72c06d3368a68}{
+int {\bfseries getNumMatches} () const }
+\label{classfovis_1_1MotionEstimator_a5ce986836e2b931304b72c06d3368a68}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a73a5d5fbe2e0f32f81aba566ad082860}{
+int {\bfseries getNumReprojectionFailures} () const }
+\label{classfovis_1_1MotionEstimator_a73a5d5fbe2e0f32f81aba566ad082860}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a025c494156c68a7e1fc986ab283e6421}{
+bool {\bfseries isMotionEstimateValid} () const }
+\label{classfovis_1_1MotionEstimator_a025c494156c68a7e1fc986ab283e6421}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_adabd55c2d38a6a6e0546db780bc76f43}{
+{\bfseries MotionEstimator} (const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$rectification, const \hyperlink{group__FovisCore_ga113578b67d3e37bc78f1fffd8440e1ff}{VisualOdometryOptions} \&options)}
+\label{classfovis_1_1MotionEstimator_adabd55c2d38a6a6e0546db780bc76f43}
+
+\item 
+\hypertarget{classfovis_1_1MotionEstimator_a892c8032392efdef960a30a2e8cd817c}{
+void {\bfseries sanityCheck} () const }
+\label{classfovis_1_1MotionEstimator_a892c8032392efdef960a30a2e8cd817c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Does the heavy lifting for frame-\/to-\/frame motion estimation. 
+
+TODO 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+motion\_\-estimation.hpp\end{DoxyCompactItemize}

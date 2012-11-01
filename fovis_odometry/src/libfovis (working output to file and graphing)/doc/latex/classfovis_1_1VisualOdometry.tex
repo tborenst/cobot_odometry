@@ -1,0 +1,250 @@
+\hypertarget{classfovis_1_1VisualOdometry}{
+\section{VisualOdometry Class Reference}
+\label{classfovis_1_1VisualOdometry}\index{fovis::VisualOdometry@{fovis::VisualOdometry}}
+}
+
+
+Main visual odometry class.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classfovis_1_1VisualOdometry_acbe563757a45cb680db2b6b01f2c1619}{getChangeReferenceFrames} () const 
+\item 
+int \hyperlink{classfovis_1_1VisualOdometry_aeadd11b0fc7b95fc374f9f4c441cb19b}{getFastThreshold} () const 
+\item 
+const Eigen::Matrix3d \& \hyperlink{classfovis_1_1VisualOdometry_a06475550bc622f54d1e1152bf48af59d}{getInitialHomography} () const 
+\item 
+const Eigen::Isometry3d \& \hyperlink{classfovis_1_1VisualOdometry_a7c8a153a489f90c60123666495900a72}{getMotionEstimate} () const 
+\item 
+const Eigen::MatrixXd \& \hyperlink{classfovis_1_1VisualOdometry_a13c92fba48648f413eebccd6fde24e18}{getMotionEstimateCov} () const 
+\item 
+MotionEstimateStatusCode \hyperlink{classfovis_1_1VisualOdometry_ae03356861ab491be0d5e608c8cdd33a2}{getMotionEstimateStatus} () const 
+\item 
+const \hyperlink{classfovis_1_1MotionEstimator}{MotionEstimator} $\ast$ \hyperlink{classfovis_1_1VisualOdometry_a46ee2db8b83c7d29d2788284a20118a5}{getMotionEstimator} () const 
+\item 
+const \hyperlink{group__FovisCore_ga113578b67d3e37bc78f1fffd8440e1ff}{VisualOdometryOptions} \& \hyperlink{classfovis_1_1VisualOdometry_a1d3dff2d7747af2023d37b9fc083839d}{getOptions} () const 
+\item 
+const Eigen::Isometry3d \& \hyperlink{classfovis_1_1VisualOdometry_a6e5d8524487f34d5f3c5dc8e26328f81}{getPose} ()
+\item 
+const \hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$ \hyperlink{classfovis_1_1VisualOdometry_a6700c99d0ce2f67bb76ba55098f0e814}{getReferenceFrame} () const 
+\item 
+const \hyperlink{classfovis_1_1OdometryFrame}{OdometryFrame} $\ast$ \hyperlink{classfovis_1_1VisualOdometry_a69e5a07d97c47fc049a42f2ba2939cab}{getTargetFrame} () const 
+\item 
+void \hyperlink{classfovis_1_1VisualOdometry_a58914d47aef477789e434ef7f484d4bb}{processFrame} (const uint8\_\-t $\ast$gray, \hyperlink{classfovis_1_1DepthSource}{DepthSource} $\ast$depth\_\-source)
+\item 
+void \hyperlink{classfovis_1_1VisualOdometry_a892c8032392efdef960a30a2e8cd817c}{sanityCheck} () const 
+\item 
+\hyperlink{classfovis_1_1VisualOdometry_a0800e59ff148f215673b02b60a9f1d2c}{VisualOdometry} (const \hyperlink{classfovis_1_1Rectification}{Rectification} $\ast$rectification, const \hyperlink{group__FovisCore_ga113578b67d3e37bc78f1fffd8440e1ff}{VisualOdometryOptions} \&options)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{group__FovisCore_ga113578b67d3e37bc78f1fffd8440e1ff}{VisualOdometryOptions} \hyperlink{classfovis_1_1VisualOdometry_a00ae0b1c3d48cf00aebf4b0c820980a9}{getDefaultOptions} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main visual odometry class. 
+
+
+\begin{DoxyCode}
+ #include <fovis/fovis.hpp>
+\end{DoxyCode}
+
+
+This is the primary fovis class for estimating visual odometry. To use it, you'll need three things: \begin{DoxyItemize}
+\item a source of grayscale input images. \item a \hyperlink{classfovis_1_1DepthSource}{DepthSource} that can estimate the distance to as many pixels in the input images as possible. \item a \hyperlink{classfovis_1_1Rectification}{Rectification} object for converting the source image coordinates to a rectified pinhole projection coordinate system. This is typically used to correct radial lens distortion.\end{DoxyItemize}
+A typical use case for the \hyperlink{classfovis_1_1VisualOdometry}{VisualOdometry} class is to repeatedly call \hyperlink{classfovis_1_1VisualOdometry_a58914d47aef477789e434ef7f484d4bb}{processFrame()} as new image data is available, which estimates the camera motion and makes the resulting estimation data available via accessor methods.
+
+Options to control the behavior of the visual odometry algorithm can be passed in to the constructor using a VisualOdometryOptions object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfovis_1_1VisualOdometry_a0800e59ff148f215673b02b60a9f1d2c}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!VisualOdometry@{VisualOdometry}}
+\index{VisualOdometry@{VisualOdometry}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{VisualOdometry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VisualOdometry} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rectification} $\ast$}]{rectification, }
+\item[{const {\bf VisualOdometryOptions} \&}]{options}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1VisualOdometry_a0800e59ff148f215673b02b60a9f1d2c}
+Constructs a new visual odometry estimator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectification} & specifies the input image dimensions, as well as the mapping from input image coordinates to rectified image coordinates. \\
+\hline
+{\em options} & controls the behavior of the estimation algorithms. This is specified as a key/value dictionary. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfovis_1_1VisualOdometry_a58914d47aef477789e434ef7f484d4bb}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!processFrame@{processFrame}}
+\index{processFrame@{processFrame}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{processFrame}]{\setlength{\rightskip}{0pt plus 5cm}void processFrame (
+\begin{DoxyParamCaption}
+\item[{const uint8\_\-t $\ast$}]{gray, }
+\item[{{\bf DepthSource} $\ast$}]{depth\_\-source}
+\end{DoxyParamCaption}
+)}}
+\label{classfovis_1_1VisualOdometry_a58914d47aef477789e434ef7f484d4bb}
+process an input image and estimate the 3D camera motion between {\ttfamily gray} and the frame previously passed to this method. The estimated motion for the very first frame will always be the identity transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gray} & a new input image. The image dimensions must match those passed in to the constructor, and the image data must be stored in row-\/major order, with no pad bytes between rows. An internal copy of the image is made, and the input data is no longer needed once this method returns. \\
+\hline
+{\em depth\_\-source} & a source of depth information that can either provide a depth estimate at each pixel of the input image, or report that no depth estimate is available. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfovis_1_1VisualOdometry_a6e5d8524487f34d5f3c5dc8e26328f81}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getPose@{getPose}}
+\index{getPose@{getPose}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getPose}]{\setlength{\rightskip}{0pt plus 5cm}const Eigen::Isometry3d\& getPose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a6e5d8524487f34d5f3c5dc8e26328f81}
+Retrieves the integrated pose estimate. On initialization, the camera is positioned at the origin, with +Z pointing along the camera look vector, +X to the right, and +Y down. \hypertarget{classfovis_1_1VisualOdometry_a6700c99d0ce2f67bb76ba55098f0e814}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getReferenceFrame@{getReferenceFrame}}
+\index{getReferenceFrame@{getReferenceFrame}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getReferenceFrame}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf OdometryFrame}$\ast$ getReferenceFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a6700c99d0ce2f67bb76ba55098f0e814}
+Retrieve the current reference frame used for motion estimation. The reference frame will not change as long as new input frames are easily matched to it. \hypertarget{classfovis_1_1VisualOdometry_a69e5a07d97c47fc049a42f2ba2939cab}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getTargetFrame@{getTargetFrame}}
+\index{getTargetFrame@{getTargetFrame}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getTargetFrame}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf OdometryFrame}$\ast$ getTargetFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a69e5a07d97c47fc049a42f2ba2939cab}
+Retrieve the current target frame used for motion estimation. \hypertarget{classfovis_1_1VisualOdometry_acbe563757a45cb680db2b6b01f2c1619}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getChangeReferenceFrames@{getChangeReferenceFrames}}
+\index{getChangeReferenceFrames@{getChangeReferenceFrames}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getChangeReferenceFrames}]{\setlength{\rightskip}{0pt plus 5cm}bool getChangeReferenceFrames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_acbe563757a45cb680db2b6b01f2c1619}
+If this returns true, then the current target frame will become the reference frame on the next call to \hyperlink{classfovis_1_1VisualOdometry_a58914d47aef477789e434ef7f484d4bb}{processFrame()}. \hypertarget{classfovis_1_1VisualOdometry_ae03356861ab491be0d5e608c8cdd33a2}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getMotionEstimateStatus@{getMotionEstimateStatus}}
+\index{getMotionEstimateStatus@{getMotionEstimateStatus}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getMotionEstimateStatus}]{\setlength{\rightskip}{0pt plus 5cm}MotionEstimateStatusCode getMotionEstimateStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_ae03356861ab491be0d5e608c8cdd33a2}
+\begin{DoxyReturn}{Returns}
+whether motion estimation succeeded on the most recent call to \hyperlink{classfovis_1_1VisualOdometry_a58914d47aef477789e434ef7f484d4bb}{processFrame()}, or provides a rough failure reason. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a7c8a153a489f90c60123666495900a72}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getMotionEstimate@{getMotionEstimate}}
+\index{getMotionEstimate@{getMotionEstimate}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getMotionEstimate}]{\setlength{\rightskip}{0pt plus 5cm}const Eigen::Isometry3d\& getMotionEstimate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a7c8a153a489f90c60123666495900a72}
+\begin{DoxyReturn}{Returns}
+the estimated camera motion from the previous frame to the current frame. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a13c92fba48648f413eebccd6fde24e18}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getMotionEstimateCov@{getMotionEstimateCov}}
+\index{getMotionEstimateCov@{getMotionEstimateCov}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getMotionEstimateCov}]{\setlength{\rightskip}{0pt plus 5cm}const Eigen::MatrixXd\& getMotionEstimateCov (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a13c92fba48648f413eebccd6fde24e18}
+\begin{DoxyReturn}{Returns}
+the covariance matrix resulting from the final nonlinear least-\/squares motion estimation step. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a46ee2db8b83c7d29d2788284a20118a5}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getMotionEstimator@{getMotionEstimator}}
+\index{getMotionEstimator@{getMotionEstimator}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getMotionEstimator}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MotionEstimator}$\ast$ getMotionEstimator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a46ee2db8b83c7d29d2788284a20118a5}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classfovis_1_1MotionEstimator}{MotionEstimator} object used internally. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_aeadd11b0fc7b95fc374f9f4c441cb19b}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getFastThreshold@{getFastThreshold}}
+\index{getFastThreshold@{getFastThreshold}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getFastThreshold}]{\setlength{\rightskip}{0pt plus 5cm}int getFastThreshold (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_aeadd11b0fc7b95fc374f9f4c441cb19b}
+\begin{DoxyReturn}{Returns}
+the threshold used by the FAST feature detector. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a06475550bc622f54d1e1152bf48af59d}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getInitialHomography@{getInitialHomography}}
+\index{getInitialHomography@{getInitialHomography}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getInitialHomography}]{\setlength{\rightskip}{0pt plus 5cm}const Eigen::Matrix3d\& getInitialHomography (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a06475550bc622f54d1e1152bf48af59d}
+\begin{DoxyReturn}{Returns}
+the 2D homography computed during initial rotation estimation. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a1d3dff2d7747af2023d37b9fc083839d}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf VisualOdometryOptions}\& getOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a1d3dff2d7747af2023d37b9fc083839d}
+\begin{DoxyReturn}{Returns}
+the options passed in to the constructor. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a00ae0b1c3d48cf00aebf4b0c820980a9}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!getDefaultOptions@{getDefaultOptions}}
+\index{getDefaultOptions@{getDefaultOptions}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{getDefaultOptions}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf VisualOdometryOptions} getDefaultOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classfovis_1_1VisualOdometry_a00ae0b1c3d48cf00aebf4b0c820980a9}
+\begin{DoxyReturn}{Returns}
+a reasonable set of default options that can be passed in to the constructor if you don't know or care about the options. 
+\end{DoxyReturn}
+\hypertarget{classfovis_1_1VisualOdometry_a892c8032392efdef960a30a2e8cd817c}{
+\index{fovis::VisualOdometry@{fovis::VisualOdometry}!sanityCheck@{sanityCheck}}
+\index{sanityCheck@{sanityCheck}!fovis::VisualOdometry@{fovis::VisualOdometry}}
+\subsubsection[{sanityCheck}]{\setlength{\rightskip}{0pt plus 5cm}void sanityCheck (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classfovis_1_1VisualOdometry_a892c8032392efdef960a30a2e8cd817c}
+Performs some internal sanity checks and aborts the program on failure. This is for debugging only. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+visual\_\-odometry.hpp\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+set xrange [-1:1]
+set yrange [-1:1]
+plot "example.dat" using 1:2
+pause -1
