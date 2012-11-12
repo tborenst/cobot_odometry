@@ -1,0 +1,15 @@
+<package>
+  <description brief="odometry_listener">
+
+     odometry_listener
+
+  </description>
+  <author>tborenst</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/odometry_listener</url>
+
+  <depend package="cobot_msgs"/>
+</package>
+
+
